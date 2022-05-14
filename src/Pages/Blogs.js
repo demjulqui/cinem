@@ -1,5 +1,8 @@
+import PopularMovie from "../components/Popular/PopularMovie";
+
+
 const Blogs = () => {
-    return <h1>Blog Articles</h1>;
+    return <PopularMovie />
 };
 
 export default Blogs;
