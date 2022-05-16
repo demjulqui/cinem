@@ -94,11 +94,12 @@ const NavbarHome = () => {
 								</Nav.Link>
 							</Nav>
 						</Col>
+
+						<IconButton onClick={() => addToCart(1)}>
+							<ShoppingCartIcon />
+							<span className="badge badge-pill badge-danger">{cartItems}</span>
+						</IconButton>
 						<Col>
-							<IconButton onClick={() => addToCart(1)}>
-								<ShoppingCartIcon />
-								<span className="badge badge-pill badge-danger">{cartItems}</span>
-							</IconButton>
 							<CercaBox />
 						</Col>
 					</Navbar.Collapse>
