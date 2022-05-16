@@ -4,6 +4,10 @@ import { Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bo
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { IconButton } from '@mui/material';
 import RecipeReviewCard from '../Models/Car';
+import Layout from '../../Pages/Layout';
+import Home from '../../Pages/Home';
+import Trend from '../../Pages/Trend';
+import Contact from '../../Pages/Contact';
 
 const NavbarHome = () => {
 	const [ cartItems, setCartItems ] = useState(0);
@@ -63,11 +67,22 @@ const NavbarHome = () => {
 					<Navbar.Brand href="/">Navbar scroll</Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbarScroll" />
 					<Navbar.Collapse id="navbarScroll">
-						<Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-							<Nav.Link href="/">Home</Nav.Link>
-							<Nav.Link href="/Trend">Trend</Nav.Link>
+						<Nav
+							className="me-auto my-2 my-lg-0"
+							style={{ maxHeight: '100px' }}
+							navbarScroll
+							element={<Layout />}
+						>
+							<Nav.Link href="/" index element={<Home />}>
+								Home
+							</Nav.Link>
+							<Nav.Link href="/Trend" element={<Trend />}>
+								Trend
+							</Nav.Link>
 							<NavDropdown title="Link" id="navbarScrollingDropdown">
-								<NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+								<NavDropdown.Item href="/Contact" element={<Contact />}>
+									Contact
+								</NavDropdown.Item>
 								<NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
 								<NavDropdown.Divider />
 								<NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>

@@ -8,6 +8,7 @@ import NoPage from './Pages/NoPage';
 import Layout from './Pages/Layout';
 import Trend from './Pages/Trend';
 import NavbarHome from './components/Navbar/navbar';
+import HomePage from './Pages/Correla';
 
 
 
@@ -17,16 +18,7 @@ export default function App() {
   return (
     <>
       <NavbarHome />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="Trend" element={<Trend />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="*" element={<NoPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <HomePage />
     </>
 
   );

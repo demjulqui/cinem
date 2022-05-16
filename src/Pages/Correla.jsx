@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './pages/Layout';
-import Home from './pages/Home';
+import Layout from './Layout';
+import Home from './Home';
 import Trend from './Trend';
-import Contact from './pages/Contact';
-import NoPage from './pages/NoPage';
+import Contact from './Contact';
+import NoPage from './NoPage';
 
 const HomePage = () => {
 	return (
