@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import MediaControlCard from '../Models/CardD';
 
 const axios = require('axios').default;
 
@@ -27,7 +28,15 @@ export default function SearchBox() {
 				<input type="text" onChange={(e) => setSearchField(e.target.value)} />
 				<button type={'submit'}>search</button>
 			</form>
-			{resultList.map((element) => <p>{element.title}</p>)}
+			{resultList.map((element) => (
+				<MediaControlCard
+					title={element.title}
+					poster={element.poster_path}
+					overview={element.overview}
+					id={element.id}
+					type={element.media_type}
+				/>
+			))}
 		</div>
 	);
 }
