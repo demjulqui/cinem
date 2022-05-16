@@ -27,16 +27,18 @@ export default function MediaControlCard(props) {
 									<Typography component="div" variant="subtitle1">
 										{props.overview}
 									</Typography>
-								</Col>
-								<Col>
+
 									<Typography variant="subtitle1" color="text.secondary" component="div">
 										{props.release_date}
 									</Typography>
 								</Col>
+
+								<Col>
+									<Figure.Image width={210} height={100} src={props.poster} alt={props.title} />
+								</Col>
 							</Row>
 						</CardContent>
 					</Box>
-					<Figure.Image width={210} height={100} src={props.poster} alt={props.title} />
 				</Card>
 			</Card>
 		</Container>
