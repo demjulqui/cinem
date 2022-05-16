@@ -28,6 +28,10 @@ const ExpandMore = styled((props) => {
 //aggiungo delle props
 export default function RecipeReviewCard(props) {
 	const [ expanded, setExpanded ] = React.useState(false);
+	const [ cartItems, setCartItems ] = useState(0);
+	const [ favItems, setFavItems ] = useState(0);
+	const [ cart, setCart ] = useState([]);
+	const [ fav, setFav ] = useState([]);
 
 	const handleExpandClick = () => {
 		setExpanded(!expanded);
@@ -49,7 +53,21 @@ export default function RecipeReviewCard(props) {
 		props.setCartItems(cart.length);
 	};
 
-	//faccio una funzione che mi permette di salvare i preferiti
+	//inizializzo il carrello e i prodotti preferiti
+	useEffect(() => {
+		const cart = JSON.parse(localStorage.getItem('cart'));
+		const fav = JSON.parse(localStorage.getItem('fav'));
+		if (cart) {
+			setCart(cart);
+			setCartItems(cart.length);
+		}
+		if (fav) {
+			setFav(fav);
+			setFavItems(fav.length);
+		}
+	}, []);
+
+	//creo funzione per aggiungere al preferito il prodotto selezionato e aggiornare il numero di prodotti preferiti
 	const addToFav = (id) => {
 		const fav = JSON.parse(localStorage.getItem('fav'));
 		if (fav) {
@@ -62,29 +80,20 @@ export default function RecipeReviewCard(props) {
 			fav.push(id);
 		}
 		localStorage.setItem('fav', JSON.stringify(fav));
+		props.setFav(fav);
+		props.setFavItems(fav.length);
 	};
-	//faccio una funzione che mi permette di vedere i preferiti
-	const fav = JSON.parse(localStorage.getItem('fav'));
-	const favItems = fav ? fav.length : 0;
 
 	return (
 		<Card sx={{ maxWidth: 345 }}>
-			<CardHeader
-				action={
-					<IconButton aria-label="add to favorites" onClick={() => addToFav(props.id)}>
-						<FavoriteIcon />
-					</IconButton>
-				}
-				title={props.title}
-				subheader={props.date}
-			/>
+			<CardHeader subheader={props.release_date} />
 			<CardMedia component={'img'} image={props.image} alt={props.title} />
 			<CardContent />
 			<CardActions disableSpacing>
-				<IconButton aria-label="settings" onClick={() => addToCart(props.id)}>
-					<ShoppingCartIcon />
+				<IconButton aria-label="add to favorites" onClick={() => addToFav(props.id)}>
+					<FavoriteIcon />
 				</IconButton>
-
+				<h4>{props.title}</h4>
 				<ExpandMore
 					expand={expanded}
 					onClick={handleExpandClick}
