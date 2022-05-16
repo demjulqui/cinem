@@ -39,8 +39,14 @@ const CercaBox = () => {
 	return (
 		<div>
 			<Form onSubmit={searchElement}>
-				<FormControl type="text" placeholder="Search" onChange={(e) => setCerca(e.target.value)} />
-				<Button type="submit">Search</Button>
+				<Row>
+					<Col>
+						<FormControl type="text" placeholder="Search" onChange={(e) => setCerca(e.target.value)} />
+					</Col>
+					<Col>
+						<Button type="submit">Search</Button>
+					</Col>
+				</Row>
 			</Form>
 
 			{cercaResult.map((element) => (
