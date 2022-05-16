@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MediaControlCard from '../Models/CardD';
+//`https://image.tmdb.org/t/p/w500/ -> per visualizzare le immagini
 
 const axios = require('axios').default;
 
@@ -31,7 +32,7 @@ export default function SearchBox() {
 			{resultList.map((element) => (
 				<MediaControlCard
 					title={element.title}
-					poster={element.poster_path}
+					poster={`https://image.tmdb.org/t/p/w500/${element.poster_path}`}
 					overview={element.overview}
 					id={element.id}
 					type={element.media_type}

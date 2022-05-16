@@ -45,7 +45,7 @@ const CercaBox = () => {
 			{cercaResult.map((element) => (
 				<MediaControlCard
 					title={element.title}
-					poster={element.poster_path}
+					poster={`https://image.tmdb.org/t/p/w500/${element.poster_path}`}
 					overview={element.overview}
 					id={element.id}
 					type={element.media_type}
