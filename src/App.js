@@ -12,9 +12,9 @@ import HomePage from './Pages/Correla';
 export default function App() {
   return (
     <>
-    <NavbarHome/>
-    
-      <HomePage />
+      <NavbarHome />
+
+
     </>
 
   );
