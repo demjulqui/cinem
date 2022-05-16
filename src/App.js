@@ -14,7 +14,7 @@ export default function App() {
     <>
       <NavbarHome />
 
-
+      <HomePage />
     </>
 
   );

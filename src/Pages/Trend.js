@@ -10,9 +10,7 @@ const Trend = () => {
 
         <Container>
             <Row>
-                <Col>
-                    <CercaBox />
-                </Col>
+
                 <Col>
 
                     <PopularDay />
