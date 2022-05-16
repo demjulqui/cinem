@@ -1,6 +1,6 @@
 import Navbar from 'react-bootstrap/Navbar';
 import React, { useState, useEffect } from 'react';
-import { Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import { Container, Nav, NavDropdown, Row, Col } from 'react-bootstrap';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { IconButton } from '@mui/material';
 import RecipeReviewCard from '../Models/Car';
@@ -8,6 +8,7 @@ import Layout from '../../Pages/Layout';
 import Home from '../../Pages/Home';
 import Trend from '../../Pages/Trend';
 import Contact from '../../Pages/Contact';
+import CercaBox from './Cerca';
 
 const NavbarHome = () => {
 	const [ cartItems, setCartItems ] = useState(0);
@@ -67,38 +68,39 @@ const NavbarHome = () => {
 					<Navbar.Brand href="/">Navbar scroll</Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbarScroll" />
 					<Navbar.Collapse id="navbarScroll">
-						<Nav
-							className="me-auto my-2 my-lg-0"
-							style={{ maxHeight: '100px' }}
-							navbarScroll
-							element={<Layout />}
-						>
-							<Nav.Link href="/" index element={<Home />}>
-								Home
-							</Nav.Link>
-							<Nav.Link href="/Trend" element={<Trend />}>
-								Trend
-							</Nav.Link>
-							<NavDropdown title="Link" id="navbarScrollingDropdown">
-								<NavDropdown.Item href="/Contact" element={<Contact />}>
-									Contact
-								</NavDropdown.Item>
-								<NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-								<NavDropdown.Divider />
-								<NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
-							</NavDropdown>
-							<Nav.Link href="#" disabled>
-								Link
-							</Nav.Link>
-						</Nav>
-						<IconButton onClick={() => addToCart(1)}>
-							<ShoppingCartIcon />
-							<span className="badge badge-pill badge-danger">{cartItems}</span>
-						</IconButton>
-						<Form className="d-flex">
-							<FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" />
-							<Button variant="outline-success">Search</Button>
-						</Form>
+						<Col>
+							<Nav
+								className="me-auto my-2 my-lg-0"
+								style={{ maxHeight: '100px' }}
+								navbarScroll
+								element={<Layout />}
+							>
+								<Nav.Link href="/" index element={<Home />}>
+									Home
+								</Nav.Link>
+								<Nav.Link href="/Trend" element={<Trend />}>
+									Trend
+								</Nav.Link>
+								<NavDropdown title="Link" id="navbarScrollingDropdown">
+									<NavDropdown.Item href="/Contact" element={<Contact />}>
+										Contact
+									</NavDropdown.Item>
+									<NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+									<NavDropdown.Divider />
+									<NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
+								</NavDropdown>
+								<Nav.Link href="#" disabled>
+									Link
+								</Nav.Link>
+							</Nav>
+						</Col>
+						<Col>
+							<IconButton onClick={() => addToCart(1)}>
+								<ShoppingCartIcon />
+								<span className="badge badge-pill badge-danger">{cartItems}</span>
+							</IconButton>
+							<CercaBox />
+						</Col>
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>

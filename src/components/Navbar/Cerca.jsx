@@ -42,6 +42,7 @@ const CercaBox = () => {
 				<FormControl type="text" placeholder="Search" onChange={(e) => setCerca(e.target.value)} />
 				<Button type="submit">Search</Button>
 			</Form>
+
 			{cercaResult.map((element) => (
 				<MediaControlCard
 					title={element.title}
