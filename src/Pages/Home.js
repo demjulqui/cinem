@@ -24,8 +24,6 @@ const Home = () => {
     return (
         <>
             <div>
-                <Login />
-                <Logout />
                 <HookLook />
 
 
