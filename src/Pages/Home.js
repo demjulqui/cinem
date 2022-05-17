@@ -1,14 +1,35 @@
-import Album from "../components/Album";
-import NavHome from "../components/Navbar/navbar";
-import Cerca from "../components/Navbar/Cerca";
-import CercaBox from "../components/Navbar/Cerca";
+import Portada from "../components/Models/Slider/Portada";
+
+import Login from "../components/auth/login";
+import Logout from "../components/auth/logout";
+import React, { useEffect } from 'react';
+import HookLook from "../components/auth/HookLook";
+
+import { gapi } from "gapi-script";
 
 
+const clientId = "786066878087-jgnsj8gl3p61sljp3pbbuotj9iremar0.apps.googleusercontent.com"
 const Home = () => {
+    useEffect(() => {
+        function start() {
+            gapi.load('auth2', () => {
+                gapi.auth2.init({
+                    client_id: clientId
+                });
+            });
+        }
+        start();
+    }, []);
+
     return (
         <>
+            <div>
+                <Login />
+                <Logout />
+                <HookLook />
 
-            
+
+            </div>
 
         </>
     )

@@ -36,28 +36,44 @@ const CercaBox = () => {
 			.then((results) => setCercaResult(results.data));
 	};
 
+	const handleChange = (e) => {
+		setCerca(e.target.value);
+	};
+
 	return (
 		<div>
-			<Form onSubmit={searchElement}>
-				<Row>
-					<Col>
-						<FormControl type="text" placeholder="Search" onChange={(e) => setCerca(e.target.value)} />
-					</Col>
-					<Col>
-						<Button type="submit">Search</Button>
-					</Col>
-				</Row>
-			</Form>
-
-			{cercaResult.map((element) => (
-				<MediaControlCard
-					title={element.title}
-					poster={`https://image.tmdb.org/t/p/w500/${element.poster_path}`}
-					overview={element.overview}
-					id={element.id}
-					type={element.media_type}
-				/>
-			))}
+			<Row>
+				<Col>
+					<FormControl type="text" placeholder="Cerca" value={cerca} onChange={handleChange} />
+				</Col>
+				<Col>
+					<Button variant="primary" onClick={searchElement}>
+						Cerca
+					</Button>
+				</Col>
+			</Row>
+			<ListGroup>
+				{cercaResult.map((element) => (
+					<ListGroupItem key={element.id}>
+						<Figure>
+							<Row>
+								<Col>
+									<Figure.Image
+										width={171}
+										height={100}
+										alt="171x100"
+										src={`https://image.tmdb.org/t/p/w500/${element.poster_path}`}
+									/>
+								</Col>
+								<Col>
+									<h3>{element.title}</h3>
+									<p>{element.overview}</p>
+								</Col>
+							</Row>
+						</Figure>
+					</ListGroupItem>
+				))}
+			</ListGroup>
 		</div>
 	);
 };

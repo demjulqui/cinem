@@ -2,13 +2,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import React, { useState, useEffect } from 'react';
 import { Container, Nav, NavDropdown, Row, Col } from 'react-bootstrap';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { IconButton } from '@mui/material';
-import RecipeReviewCard from '../Models/Car';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import Layout from '../../Pages/Layout';
 import Home from '../../Pages/Home';
 import Trend from '../../Pages/Trend';
 import Contact from '../../Pages/Contact';
 import CercaBox from './Cerca';
+import { styled } from '@mui/styles';
+import { makeStyles } from '@mui/styles';
+import Button from '@mui/material/Button';
 
 const NavbarHome = () => {
 	const [ cartItems, setCartItems ] = useState(0);
@@ -44,6 +46,16 @@ const NavbarHome = () => {
 		setCart(cart);
 		setCartItems(cart.length);
 	};
+
+	const MyButton = styled(Button)({
+		background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+		border: 0,
+		borderRadius: 3,
+		boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+		color: 'white',
+		height: 48,
+		padding: '0 30px'
+	});
 
 	const addToFav = (id) => {
 		const fav = JSON.parse(localStorage.getItem('fav'));
@@ -95,10 +107,10 @@ const NavbarHome = () => {
 							</Nav>
 						</Col>
 
-						<IconButton onClick={() => addToCart(1)}>
-							<ShoppingCartIcon />
+						<MyButton onClick={() => addToCart(1)}>
+							<FavoriteIcon />
 							<span className="badge badge-pill badge-danger">{cartItems}</span>
-						</IconButton>
+						</MyButton>
 						<Col>
 							<CercaBox />
 						</Col>

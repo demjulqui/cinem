@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import React, { useState, useEffect } from 'react';
+import Preferiti from '../Favorite/Preferiti';
 
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -36,63 +37,33 @@ export default function RecipeReviewCard(props) {
 	const handleExpandClick = () => {
 		setExpanded(!expanded);
 	};
-	//creo funzione per aggiungere al carrello il prodotto selezionato e aggiornare il numero di prodotti nel carrello
-	const addToCart = (id) => {
-		const cart = JSON.parse(localStorage.getItem('cart'));
-		if (cart) {
-			if (cart.includes(id)) {
-				cart.splice(cart.indexOf(id), 1);
-			} else {
-				cart.push(id);
-			}
-		} else {
-			cart.push(id);
-		}
-		localStorage.setItem('cart', JSON.stringify(cart));
-		props.setCart(cart);
-		props.setCartItems(cart.length);
-	};
 
-	//inizializzo il carrello e i prodotti preferiti
-	useEffect(() => {
-		const cart = JSON.parse(localStorage.getItem('cart'));
-		const fav = JSON.parse(localStorage.getItem('fav'));
-		if (cart) {
-			setCart(cart);
-			setCartItems(cart.length);
-		}
-		if (fav) {
-			setFav(fav);
-			setFavItems(fav.length);
-		}
-	}, []);
-
-	//creo funzione per aggiungere al preferito il prodotto selezionato e aggiornare il numero di prodotti preferiti
-	const addToFav = (id) => {
+	//creo una lista di preferiti vuota
+	const [ listaPreferiti, setListaPreferiti ] = useState([]);
+	//ogni volta che si clicca su un pulsante aggiungi alla lista di preferiti
+	const addToFav = (props) => {
 		const fav = JSON.parse(localStorage.getItem('fav'));
 		if (fav) {
-			if (fav.includes(id)) {
-				fav.splice(fav.indexOf(id), 1);
+			if (fav.includes(props.id)) {
+				fav.splice(fav.indexOf(props.id), 1);
 			} else {
-				fav.push(id);
+				fav.push(props.id);
 			}
 		} else {
-			fav.push(id);
+			fav.push(props.id);
 		}
 		localStorage.setItem('fav', JSON.stringify(fav));
-		props.setFav(fav);
-		props.setFavItems(fav.length);
+		setFav(fav);
+		setFavItems(fav.length);
 	};
-
 	return (
 		<Card sx={{ maxWidth: 345 }}>
 			<CardHeader subheader={props.release_date} />
 			<CardMedia component={'img'} image={props.image} alt={props.title} />
 			<CardContent />
 			<CardActions disableSpacing>
-				<IconButton aria-label="add to favorites" onClick={() => addToFav(props.id)}>
-					<FavoriteIcon />
-				</IconButton>
+				<Preferiti id={props.id} onClick={addToFav} isFavorite={fav.includes(props.id)} />
+
 				<h4>{props.title}</h4>
 				<ExpandMore
 					expand={expanded}
