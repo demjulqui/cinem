@@ -18,7 +18,6 @@ const Portada = () => {
 
 	return (
 		<div>
-			<h2>##scrivi qui##</h2>
 			<Slider {...sliderSettings}>
 				{id.map((item) => (
 					<div key={item.id}>
