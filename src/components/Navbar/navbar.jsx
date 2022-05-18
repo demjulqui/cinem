@@ -91,7 +91,7 @@ const NavbarHome = () => {
 									Home
 								</Nav.Link>
 								<Nav.Link href="/Trend" element={<Trend />}>
-									Trend
+									Preferiti
 								</Nav.Link>
 								<NavDropdown title="Link" id="navbarScrollingDropdown">
 									<NavDropdown.Item href="/Contact" element={<Contact />}>
