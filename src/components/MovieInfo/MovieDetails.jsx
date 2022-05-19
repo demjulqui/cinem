@@ -4,48 +4,69 @@ import './MovieDetails.css';
 import ReactPlayer from 'react-player/youtube';
 
 const MovieDetails = (props) => {
-	const movie = props.movie;
-	const movieId = props.movieId;
+	const {
+		id: movie_id,
+		title,
+		backdrop_path: backdrop,
+		release_date,
+		overview,
+		genres,
+		budget,
+		revenue,
+		runtime,
+		tagline,
+		average_rating: rating,
+		selectedMovieVideos: videos
+	} = props.data;
 
 	function onLoad() {
 		window.scrollTo(0, 0);
 
 		const id = props.match.params.movie_id;
-		if (+id !== movieId) {
-			props.onMovieClick(movie);
+		if (+id !== movie_id) {
+			props.syncMovieID(id);
 		}
 	}
 
 	function getVideo(type) {
-		const matchedVideo = movie.videos.results.find((video) => video.type === type);
+		const matchedVideo = videos.find((v) => v.type === type);
 		return `https://www.${matchedVideo.site.toLowerCase()}.com/watch?v=${matchedVideo.key}`;
 	}
 
-	const getReleaseYear = () => {
-		return movie.release_date.substring(0, 4);
+	const getReleaseYear = (date) => {
+		return release_date.split('-')[0];
 	};
 
 	const getRatingColor = () => {
-		if (movie.vote_average > 7) {
+		if (rating >= 7) {
 			return { color: '#0ff900' };
-		} else if (movie.vote_average > 4) {
+		} else if (rating <= 4.5) {
 			return { color: '#ff5c5c' };
 		} else {
 			return { color: '#f9e600' };
 		}
 	};
 
-	const Popularity = () => {
-		const popularity = movie.popularity;
-		const popularityPercentage = popularity / 100 * 100;
-		return popularityPercentage.toFixed(0);
+	const getProgressBarBadge = () => {
+		const gain = calculateProfit()[1];
+		let color = '';
+		if (gain > 70) {
+			color = 'bg-success';
+		} else if (gain < 30) {
+			color = 'bg-danger';
+		} else {
+			color = 'bg-warning';
+		}
+		return `progress-bar ${color}`;
 	};
 
-	const ratingPercent = () => {
-		const rating = movie.vote_average;
-		const ratingPercentage = rating / 10 * 100;
-		return ratingPercentage.toFixed(0);
+	const calculateProfit = () => {
+		const gain = revenue / budget;
+		const gainPercent = (gain * 100).toFixed();
+		return gain > 0.99 ? [ '100', gainPercent ] : [ gainPercent, gainPercent ];
 	};
+
+	const ratingPercent = (rating / 10 * 100).toFixed() + '%';
 
 	const loadingScreen = (
 		<div style={{ width: '100vh', height: '100vw', display: 'flex' }}>
@@ -57,87 +78,79 @@ const MovieDetails = (props) => {
 
 	return (
 		<React.Fragment>
-			{loadingScreen}
-			<div className="movie-details">
-				<div className="movie-details-header">
-					<div className="movie-details-header-left">
-						<div className="movie-details-header-left-title">
-							<h1>{movie.title}</h1>
-							<h2>{getReleaseYear()}</h2>
-						</div>
-						<div className="movie-details-header-left-rating">
-							<h2>{movie.vote_average}</h2>
-							<h3>{ratingPercent()}%</h3>
-						</div>
+			{!title ? (
+				loadingScreen
+			) : (
+				<div className="page-wrapper">
+					<div className="wrapper">
+						<div
+							className="backdrop kenburns-bottom-left"
+							style={{ backgroundImage: `url(${backdrop})` }}
+							alt=""
+						/>
 					</div>
-					<div className="movie-details-header-right">
-						<div className="movie-details-header-right-budget">
-							<h2>${movie.budget}</h2>
-							<h3>Budget</h3>
+					<div className="details-wrapper">
+						<div className="details-text-container">
+							<h1 className="">{title}</h1>
+							<div className="sub-header">
+								<h2 style={getRatingColor()}>{ratingPercent}</h2>
+								<div className="sub-header-release-runtime">
+									<small>{getReleaseYear(release_date)}</small>
+									<small style={{ fontWeight: 600 }}>|</small>
+									<small>{runtime} min</small>
+								</div>
+							</div>
+							{tagline && <h3>{tagline}</h3>}
+							{overview && <p>{overview}</p>}
+							<div className="genres-container">
+								{genres &&
+									genres.map((genre) => (
+										<h5 key={genre}>
+											<span className="genre badge badge-secondary">{genre}</span>
+										</h5>
+									))}
+							</div>
+							<div className="budget-revenue-container">
+								{budget > 0 && (
+									<div className="budget-revenue genre badge badge-secondary">
+										<p>Budget</p>
+										<p>${budget.toLocaleString()}</p>
+									</div>
+								)}
+								{revenue > 0 && (
+									<div className="budget-revenue genre badge badge-secondary">
+										<p>Revenue</p>
+										<p>${revenue.toLocaleString()}</p>
+									</div>
+								)}
+							</div>
+							{budget &&
+							revenue && (
+								<div>
+									<p>Return</p>
+									<div className="progress-bg badge badge-secondary progress">
+										<div
+											className={getProgressBarBadge()}
+											role="progressbar"
+											style={{ width: `${calculateProfit()[1]}%` }}
+											aria-valuenow={calculateProfit()[1]}
+											aria-valuemin="0"
+											aria-valuemax="100"
+										>
+											{calculateProfit()[0]}%
+										</div>
+									</div>
+								</div>
+							)}
 						</div>
-						<div className="movie-details-header-right-revenue">
-							<h2>${movie.revenue}</h2>
-							<h3>Revenue</h3>
-						</div>
-					</div>
-				</div>
-				<div className="movie-details-body">
-					<div className="movie-details-body-left">
-						<div className="movie-details-body-left-poster">
-							<img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-						</div>
-						<div className="movie-details-body-left-overview">
-							<h2>Overview</h2>
-							<p>{movie.overview}</p>
-						</div>
-					</div>
-					<div className="movie-details-body-right">
-						<div className="movie-details-body-right-trailer">
-							<ReactPlayer
-								url={getVideo('Trailer')}
-								width="100%"
-								height="100%"
-								controls={true}
-								playing={true}
-								loop={true}
-								muted={true}
-								config={{
-									youtube: {
-										playerVars: {
-											autoplay: 1,
-											modestbranding: 1,
-											showinfo: 0,
-											controls: 0,
-											rel: 0,
-											disablekb: 1,
-											fs: 0,
-											cc_load_policy: 0,
-											iv_load_policy: 3,
-											autohide: 1,
-											showsearch: 0,
-											modestbranding: 1,
-											playsinline: 1,
-											origin: 'https://www.youtube.com'
-										}
-									}
-								}}
-							/>
-						</div>
-						<div className="movie-details-body-right-budget">
-							<h2>${movie.budget}</h2>
-							<h3>Budget</h3>
-						</div>
-						<div className="movie-details-body-right-revenue">
-							<h2>${movie.revenue}</h2>
-							<h3>Revenue</h3>
-						</div>
-						<div className="movie-details-body-right-profit">
-							<h2>${movie.revenue - movie.budget}</h2>
-							<h3>Profit</h3>
-						</div>
+						{videos.length && (
+							<div className="video-wrapper">
+								<ReactPlayer controls={true} url={getVideo('Trailer')} wrapper="div" />
+							</div>
+						)}
 					</div>
 				</div>
-			</div>
+			)}
 		</React.Fragment>
 	);
 };

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import RecipeReviewCard from '../Models/Car';
+import MovieDetails from '../MovieInfo/MovieDetails';
 
 const AzionGenre = () => {
 	const [ movies, setMovies ] = useState([]);
@@ -15,20 +17,14 @@ const AzionGenre = () => {
 	return (
 		<Container>
 			<Row>
-				{movies.map((movie) => (
-					<Col key={movie.id} xs={12} md={6} lg={4}>
-						<Card>
-							<Card.Img
-								variant="top"
-								src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-								alt={movie.name}
-							/>
-							<Card.Body>
-								<Card.Text>{movie.overview}</Card.Text>
-							</Card.Body>
-						</Card>
-					</Col>
-				))}
+				<Col>
+					<h1>Azione</h1>
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					<MovieDetails movies={movies} id={id} />
+				</Col>
 			</Row>
 		</Container>
 	);

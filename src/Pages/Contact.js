@@ -7,22 +7,31 @@ import NavbarHome from "../components/Navbar/navbar";
 import { Container } from "react-bootstrap";
 import GenreAzione from "../components/Genre/GenreAzione";
 import Banner2 from "../components/Banner/Banner2";
+import GenreAvventura from "../components/Genre/GenreAventura";
+import GenreAnimazione from "../components/Genre/GenreAnimazione";
+import GenreCommedia from "../components/Genre/GenreCommedia";
+
+
+
 
 
 const Contact = () => {
     return <>
         <NavbarHome />
-        <Container>
 
 
 
-            <Banner2 />
 
-            <TVWatch />
+        <Banner2 />
 
-            <GenreAzione />
+        <TVWatch />
 
-        </Container>
+        <GenreAzione />
+        <GenreAvventura />
+        <GenreAnimazione />
+        <GenreCommedia />
+
+
     </>;
 };
 

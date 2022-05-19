@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SliderComponent from '../Models/Sli';
 
-const GenreAzione = () => {
+const GenreCommedia = () => {
 	const [ movies, setMovies ] = useState([]);
 	useEffect(() => {
-		axios.get(`http://127.0.0.1:2000/api/tv/ricercaperGenere?genre=azione`).then((res) => {
+		axios.get(`http://127.0.0.1:2000/api/tv/ricercaperGenere?genre=commedia`).then((res) => {
 			setMovies(res.data);
 			console.log(movies);
 		});
@@ -15,10 +15,10 @@ const GenreAzione = () => {
 
 	return (
 		<div>
-			<h1>Azione</h1>
+			<h1>Commedia</h1>
 			<SliderComponent id={movies} />
 		</div>
 	);
 };
 
-export default GenreAzione;
+export default GenreCommedia;

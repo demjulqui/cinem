@@ -17,7 +17,7 @@ const Banner2 = () => {
 				<Carousel.Item key={movie.id}>
 					<div className="banner-wrapper">
 						<img
-							className="d-block w-100 img-fluid "
+							className="d-block w-100 img-fluid"
 							src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
 							alt={movie.name}
 						/>

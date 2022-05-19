@@ -26,12 +26,12 @@ export default function RecipeReviewCard(props) {
 			>
 				<Link to={`/movies/${props.id}`}>
 					<img
-						className="card-img-top hover-img"
+						className="card-img-top hover"
 						src={`https://image.tmdb.org/t/p/w500/${props.image}`}
 						alt={`${props.title}`}
 					/>
 				</Link>
-				<div className="card-body text-dark">
+				<div className="card-body text-dark h5">
 					<h5 className="card-title">{props.title}</h5>
 					<p className="card-text">
 						<small className="text-muted">Release Date {props.release_date}</small>
