@@ -132,3 +132,14 @@ code {
 #coverImg {
 	object-fit: cover;
 }
+/* ===============================
+    # Trend Page  
+==================================*/
+.trendBackground{
+	background: rgb(31,188,220);
+	background: radial-gradient(circle, rgba(31,188,220,1) 0%, rgba(16,16,79,1) 55%, rgba(0,0,7,1) 92%);
+}
+.trendTitolo {
+	color: whitesmoke;
+	text-align: center;
+}

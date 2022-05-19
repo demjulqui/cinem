@@ -13,7 +13,7 @@ const TrendingMovieWeek = () => {
 
 	return (
 		<div>
-			<h2>Trend Di Questa Settimana</h2>
+			<h2 className='trendTitolo'>Trend Di Questa Settimana</h2>
 			<SliderComponent id={id} type="movie" title="Trend Di Questa Settimana" />
 		</div>
 	);

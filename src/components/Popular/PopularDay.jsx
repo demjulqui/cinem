@@ -16,7 +16,7 @@ const TrendingMovieDay = () => {
 
 	return (
 		<div>
-			<h2>Trend Di Oggi</h2>
+			<h2 className='trendTitolo'>Trend Di Oggi</h2>
 			<SliderComponent id={id} />
 		</div>
 	);

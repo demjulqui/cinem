@@ -9,22 +9,23 @@ import NavbarHome from "../components/Navbar/navbar";
 const Trend = () => {
     return (
         <>
-            <NavbarHome />
-            <Portada />
+            <div className="trendBackground">
+                <NavbarHome />
+                <Portada />
 
-            <Row>
-                <Col>
-                    <TopRatedMovie />
-                </Col>
+                <Row>
+                    <Col className="mt-5">
+                        <TopRatedMovie />
+                    </Col>
 
-                <Col>
-                    <PopularDay />
-                </Col>
-                <Col>
-                    <PopularMovie />
-                </Col>
-            </Row>
-
+                    <Col className="mt-5">
+                        <PopularDay />
+                    </Col>
+                    <Col className="mt-5">
+                        <PopularMovie />
+                    </Col>
+                </Row>
+            </div>
 
 
         </>
