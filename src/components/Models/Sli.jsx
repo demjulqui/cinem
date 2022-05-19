@@ -23,7 +23,8 @@ export default function SliderComponent(props) {
 						title={item.title}
 						image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
 						overview={item.overview}
-						date={item.release_date}
+						release_date={item.release_date}
+						vote_average={item.vote_average}
 					/>
 				))}
 			</Slider>
