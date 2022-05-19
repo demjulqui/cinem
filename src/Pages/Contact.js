@@ -10,6 +10,7 @@ import Banner2 from "../components/Banner/Banner2";
 import GenreAvventura from "../components/Genre/GenreAventura";
 import GenreAnimazione from "../components/Genre/GenreAnimazione";
 import GenreCommedia from "../components/Genre/GenreCommedia";
+import GenreCrime from "../components/Genre/GenreCrime";
 
 
 
@@ -17,19 +18,22 @@ import GenreCommedia from "../components/Genre/GenreCommedia";
 
 const Contact = () => {
     return <>
-        <NavbarHome />
+        <div>
+            <NavbarHome />
 
 
 
 
-        <Banner2 />
+            <Banner2 />
 
-        <TVWatch />
+            <TVWatch />
 
-        <GenreAzione />
-        <GenreAvventura />
-        <GenreAnimazione />
-        <GenreCommedia />
+            <GenreAzione />
+            <GenreAvventura />
+            <GenreAnimazione />
+            <GenreCommedia />
+            <GenreCrime />
+        </div>
 
 
     </>;
