@@ -4,14 +4,17 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { Container, Row, Col } from 'react-bootstrap';
-import CardForGenre from './NewCard';
+
+import { Card } from 'react-bootstrap';
 
 const GenreAzione = () => {
 	const [ movies, setMovies ] = useState([]);
+	const [ conta, setConta ] = useState(0);
 
 	useEffect(() => {
 		axios.get(`http://127.0.0.1:2000/api/tv/ricercaperGenere?genre=azione`).then((res) => {
-			setMovies(res.data.id ? res.data : []);
+			setMovies(res.data);
+			console.log(movies);
 		});
 	}, []);
 
@@ -20,12 +23,13 @@ const GenreAzione = () => {
 			<Row>
 				{movies.map((movie) => (
 					<Col key={movie.id} xs={12} md={6} lg={4}>
-						<CardForGenre
-							id={movie.id}
-							title={movie.name}
-							image={movie.poster_path}
-							overview={movie.overview}
-						/>
+						<Card style={{ width: '18rem' }}>
+							<Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+							<Card.Body>
+								<Card.Title>{movie.title}</Card.Title>
+								<Card.Text>{movie.overview}</Card.Text>
+							</Card.Body>
+						</Card>
 					</Col>
 				))}
 			</Row>

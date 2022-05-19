@@ -1,10 +1,12 @@
 import React from 'react';
 import Card from './Card';
 import ServiceData from './ServiceData';
+import Navbar from './Navbar';
 
 const Services = () => {
 	return (
 		<div>
+			<Navbar />
 			<div className="my-5">
 				<h1 className="text-center">I tuoi servizi</h1>
 			</div>

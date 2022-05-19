@@ -9,7 +9,7 @@ const Navbar = () => {
 					<div className="col-10 mx-auto">
 						<nav className="navbar navbar-expand-lg navbar-light">
 							<div className="container-fluid">
-								<NavLink exact className="navbar-brand" to="/Landing">
+								<NavLink exact className="navbar-brand" to="/">
 									Film'S
 								</NavLink>
 								<button
@@ -31,7 +31,7 @@ const Navbar = () => {
 												exact
 												className="nav-link active"
 												aria-current="page"
-												to="/Landing"
+												to="/"
 											>
 												Home
 											</NavLink>

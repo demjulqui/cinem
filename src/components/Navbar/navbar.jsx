@@ -99,11 +99,6 @@ const NavbarHome = () => {
 								</Nav.Link>
 							</Nav>
 						</Col>
-
-						<MyButton onClick={() => addToCart(1)}>
-							<FavoriteIcon />
-							<span className="badge badge-pill badge-danger">{cartItems}</span>
-						</MyButton>
 						<Col>
 							<CercaBox />
 						</Col>

@@ -3,6 +3,7 @@
 import AzionGenre from '../components/Genre/CardGenre';
 import React, { useEffect } from 'react';
 import HookLook from "../components/auth/HookLook";
+import NavbarHome from '../components/Navbar/navbar';
 
 
 import { gapi } from "gapi-script";

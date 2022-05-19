@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Banner.css';
 import Carousel from 'react-bootstrap/Carousel';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { fakeMovieData } from './Fake';
 
-const Banner = () => {
-	//prendo i film da un API e li metto in un array per vederli in un carousel
-	const [ movies, setMovies ] = useState([]);
+const { movies } = fakeMovieData;
 
-	useEffect(() => {
-		axios.get(`http://127.0.0.1:2000/api/tv/popular`).then((res) => {
-			setMovies(res.data.results);
-		});
-	}, []);
+//faccio una map per ogni film e lo metto in un array
 
+const film = movies.map((movie) => movie);
+
+const Banner2 = () => {
 	return (
 		<Carousel>
-			{movies.map((movie) => (
+			{film.map((movie) => (
 				<Carousel.Item key={movie.id}>
 					<div className="banner-wrapper">
 						<img
@@ -27,8 +24,8 @@ const Banner = () => {
 					</div>
 
 					<Carousel.Caption>
-						<h3>{movie.name}</h3>
-						<p>{movie.overview}</p>
+						<h3>{movie.title}</h3>
+						{(movie.average_rating.toFixed(1) / 10 * 100).toFixed()}
 					</Carousel.Caption>
 				</Carousel.Item>
 			))}
@@ -36,4 +33,4 @@ const Banner = () => {
 	);
 };
 
-export default Banner;
+export default Banner2;

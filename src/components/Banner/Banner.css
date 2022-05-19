@@ -17,10 +17,6 @@
 		transform-origin: 16% 84%;
 	}
 	100% {
-		-webkit-transform: scale(1.1) translate(-20px, 15px);
-		transform: scale(1.1) translate(-20px, 15px);
-		-webkit-transform-origin: left bottom;
-		transform-origin: left bottom;
 	}
 }
 @keyframes kenburns-bottom-left {

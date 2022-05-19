@@ -34,58 +34,14 @@ export default function RecipeReviewCard(props) {
 	const [ cart, setCart ] = useState([]);
 	const [ fav, setFav ] = useState([]);
 
-	const handleExpandClick = () => {
-		setExpanded(!expanded);
-	};
-
-	//creo una lista di preferiti vuota
-	const [ listaPreferiti, setListaPreferiti ] = useState([]);
-	//ogni volta che si clicca su un pulsante aggiungi alla lista di preferiti
-	const addToFav = (props) => {
-		const fav = JSON.parse(localStorage.getItem('fav'));
-		if (fav) {
-			if (fav.includes(props.id)) {
-				fav.splice(fav.indexOf(props.id), 1);
-			} else {
-				fav.push(props.id);
-			}
-		} else {
-			fav.push(props.id);
-		}
-		localStorage.setItem('fav', JSON.stringify(fav));
-		setFav(fav);
-		setFavItems(fav.length);
-	};
 	return (
 		<Card sx={{ maxWidth: 345 }}>
 			<CardHeader subheader={props.release_date} />
 			<CardMedia component={'img'} image={props.image} alt={props.title} />
 			<CardContent />
-			<CardActions disableSpacing>
-				<Preferiti id={props.id} onClick={addToFav} isFavorite={fav.includes(props.id)} />
-
-				<h4>{props.title}</h4>
-				<ExpandMore
-					expand={expanded}
-					onClick={handleExpandClick}
-					aria-expanded={expanded}
-					aria-label="show more"
-				>
-					<ExpandMoreIcon />
-				</ExpandMore>
+			<CardActions>
+				<h>{props.title ? props.title : 'Titolo non disponibile'}</h>
 			</CardActions>
-			<Collapse in={expanded} timeout="auto" unmountOnExit>
-				<CardContent>
-					<Typography variant="body2" color="text.secondary">
-						{props.overview}
-					</Typography>
-					<Typography paragraph>Piu Info:</Typography>
-					<Typography paragraph>Titutlo Originale: {props.original_title}</Typography>
-					<Typography paragraph>Lingua Originale: {props.original_language}</Typography>
-					<Typography paragraph>Voto: {props.vote_average}</Typography>
-					<Typography paragraph>popularita: {props.popularity}</Typography>
-				</CardContent>
-			</Collapse>
 		</Card>
 	);
 }

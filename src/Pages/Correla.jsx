@@ -6,10 +6,12 @@ import Home from './Home';
 import Trend from './Trend';
 import Contact from './Contact';
 import NoPage from './NoPage';
+import NavbarHome from '../components/Navbar/navbar';
 
 const HomePage = () => {
 	return (
 		<BrowserRouter>
+			<NavbarHome />
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route index element={<Home />} />

@@ -3,11 +3,13 @@ import PopularDay from "../components/Popular/PopularDay";
 import TopRatedMovie from "../components/Popular/TopRatedMovie";
 import { Container, Row, Col } from "react-bootstrap";
 import Portada from "../components/Models/Slider/Portada";
+import NavbarHome from "../components/Navbar/navbar";
 
 
 const Trend = () => {
     return (
         <>
+            <NavbarHome />
             <Portada />
 
             <Row>
