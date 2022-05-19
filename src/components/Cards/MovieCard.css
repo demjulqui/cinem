@@ -1,21 +1,12 @@
-@import "../../css/vars.scss";
-// @import "./mixins";
-
 .card-template {
 	min-width: 20vw !important;
 	transition: ease-in-out 0.2s;
 	z-index: 9;
-	&:hover {
-		z-index: 10;
-		transform: scale(1.05);
-	}
 }
 
 .card-body {
 	background-color: black !important;
-	h5 {
-		color: white !important;
-	}
+	color: white !important;
 }
 
 .card-text {
@@ -24,6 +15,21 @@
 }
 
 .card-wrapper {
-	margin: 0 $posterMargins;
-	font: "poppins";
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	background-color: black;
+	background-image: url(https://image.tmdb.org/t/p/w1280/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-blend-mode: multiply;
+	transition: ease-in-out 0.2s;
+	z-index: -1;
 }

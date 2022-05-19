@@ -18,15 +18,14 @@ const Banner = () => {
 		<Carousel>
 			{movies.map((movie) => (
 				<Carousel.Item key={movie.id}>
-					<Link to={`/tv/${movie.id}`}>
-						<div className="banner-wrapper">
-							<img
-								className="d-block w-100 img-fluid kenburns-bottom-left"
-								src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
-								alt={movie.name}
-							/>
-						</div>
-					</Link>
+					<div className="banner-wrapper">
+						<img
+							className="d-block w-100 img-fluid kenburns-bottom-left"
+							src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
+							alt={movie.name}
+						/>
+					</div>
+
 					<Carousel.Caption>
 						<h3>{movie.name}</h3>
 						<p>{movie.overview}</p>

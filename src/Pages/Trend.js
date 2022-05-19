@@ -9,22 +9,22 @@ const Trend = () => {
     return (
         <>
             <Portada />
-            <Container>
-                <Row>
-                    <Col>
-                        <TopRatedMovie />
-                    </Col>
 
-                    <Col>
-                        <PopularDay />
-                    </Col>
-                    <Col>
-                        <PopularMovie />
-                    </Col>
-                </Row>
+            <Row>
+                <Col>
+                    <TopRatedMovie />
+                </Col>
+
+                <Col>
+                    <PopularDay />
+                </Col>
+                <Col>
+                    <PopularMovie />
+                </Col>
+            </Row>
 
 
-            </Container>
+
         </>
 
 

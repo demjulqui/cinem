@@ -2,7 +2,7 @@ import React from 'react';
 import online from '../images/online.jpg';
 import Common from './Common';
 
-const Home = () => {
+const HomeLanding = () => {
 	return (
 		<div>
 			<Common
@@ -17,4 +17,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default HomeLanding;

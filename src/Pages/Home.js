@@ -1,11 +1,12 @@
-import Portada from "../components/Models/Slider/Portada";
 
-import Login from "../components/auth/login";
-import Logout from "../components/auth/logout";
+
+import AzionGenre from '../components/Genre/CardGenre';
 import React, { useEffect } from 'react';
 import HookLook from "../components/auth/HookLook";
 
+
 import { gapi } from "gapi-script";
+
 
 
 const clientId = "786066878087-jgnsj8gl3p61sljp3pbbuotj9iremar0.apps.googleusercontent.com"

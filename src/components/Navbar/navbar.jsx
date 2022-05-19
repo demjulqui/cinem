@@ -77,14 +77,14 @@ const NavbarHome = () => {
 		<div>
 			<Navbar bg="light" expand="lg">
 				<Container fluid>
-					<Navbar.Brand href="/">Navbar scroll</Navbar.Brand>
+					<Navbar.Brand href="/">Pagina Principale</Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbarScroll" />
 					<Navbar.Collapse id="navbarScroll">
 						<Col>
 							<Nav
 								className="me-auto my-2 my-lg-0"
 								style={{ maxHeight: '100px' }}
-								navbarScroll
+								activeKey="/home"
 								element={<Layout />}
 							>
 								<Nav.Link href="/" index element={<Home />}>
@@ -93,16 +93,9 @@ const NavbarHome = () => {
 								<Nav.Link href="/Trend" element={<Trend />}>
 									Preferiti
 								</Nav.Link>
-								<NavDropdown title="Link" id="navbarScrollingDropdown">
-									<NavDropdown.Item href="/Contact" element={<Contact />}>
-										Contact
-									</NavDropdown.Item>
-									<NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-									<NavDropdown.Divider />
-									<NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
-								</NavDropdown>
-								<Nav.Link href="#" disabled>
-									Link
+
+								<Nav.Link href="/Contact" element={<Contact />}>
+									Contact
 								</Nav.Link>
 							</Nav>
 						</Col>

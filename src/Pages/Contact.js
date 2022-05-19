@@ -1,10 +1,8 @@
 
-import TopRatedMovie from "../components/Popular/TopRatedMovie";
-import Favorite from "../components/Favorite/Preferiti";
-import Interruttore from "../components/Favorite/Interrutore";
-import ListPreferiti from "../components/Favorite/ListPreferiti";
-import TemporaryDrawer from "../components/Genre/Casseto";
+
 import Banner from "../components/Banner/Banner";
+import TVWatch from "../components/Cards/FilmTv";
+import TVInfo from "../components/MovieInfo/TVPo";
 
 
 
@@ -12,6 +10,9 @@ const Contact = () => {
     return <h1>
 
         <Banner />
+        <TVWatch />
+
+
 
 
     </h1>;
