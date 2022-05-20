@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import Trend from './Trend';
+import "./profile.css";
 
 
 const Profile = () => {
@@ -13,7 +14,7 @@ const Profile = () => {
 
     return (
         <Container >
-            <h1 className='text-center mt-5' >Selec your Profile's</h1>
+            <h1 className='text-center mt-10' >Selec your Profile's</h1>
 
             <Row className='mt-5'>
                 <Col>
