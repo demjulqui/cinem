@@ -59,6 +59,12 @@ code {
 .card-body h4 {
 	color: #3498db !important;
 }
+
+.card-body p {
+	color: #fff !important;
+}
+
+
 .my-5 h1 {
 	color: #3498db !important;
 }
