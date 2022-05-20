@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Card, Form, Button } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import Trend from '../../Pages/Trend';
+import '../images/scrittablu.png';
 
 const LoginPage = () => {
 	return (
 		<div>
 			<Card style={{ width: '18rem' }}>
-				<Card.Header>
-					<h3>Login</h3>
-				</Card.Header>
+				<Card.Img
+					variant="top"
+					src="https://cdn.discordapp.com/attachments/973882360368074804/977139741927542784/scrittablu.png"
+				/>
 				<Card.Body>
 					<Form>
 						<div className="Form-group">
@@ -41,7 +43,7 @@ const LoginPage = () => {
 								Check me out
 							</label>
 						</div>
-						<Nav.Link href="/Trend">
+						<Nav.Link href="/Profile">
 							<Button variant="primary">Login</Button>
 						</Nav.Link>
 					</Form>

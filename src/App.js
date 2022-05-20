@@ -12,6 +12,7 @@ import HomeLanding from './components/Landing/Home';
 import Trend from './Pages/Trend';
 import Contact from './Pages/Contact';
 import Homes from './Pages/Home';
+import Profile from './Pages/Profile';
 
 
 
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="Contact" element={<Contact />} />
           <Route path="Login" element={<Homes />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
 
