@@ -11,6 +11,7 @@ import NoPage from './Pages/NoPage';
 import HomeLanding from './components/Landing/Home';
 import Trend from './Pages/Trend';
 import Contact from './Pages/Contact';
+import Homes from './Pages/Home';
 
 
 
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="*" element={<NoPage />} />
           <Route path="/Home" element={<Home />} />
           <Route path="Contact" element={<Contact />} />
+          <Route path="Login" element={<Homes />} />
         </Routes>
       </BrowserRouter>
 

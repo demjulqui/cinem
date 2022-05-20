@@ -7,11 +7,13 @@ import NavbarHome from "../components/Navbar/navbar";
 import Footer from "../components/Footer/Footer";
 
 
+
 const Trend = () => {
     return (
         <>
             <div className="trendBackground">
                 <NavbarHome />
+
 
 
                 <Portada />

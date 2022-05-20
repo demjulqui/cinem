@@ -13,11 +13,10 @@ const HomeLanding = () => {
 				imgsrc={scrittablu}
 				isCompName={true}
 				compName="Film'S"
-				visit="/Trend"
+				visit="/Login"
 				btnname="Inizia ora"
 			/>
 			<FooterLanding />
-			
 		</div>
 	);
 };

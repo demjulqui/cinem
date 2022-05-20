@@ -1,38 +1,31 @@
 
 
-import AzionGenre from '../components/Genre/CardGenre';
 import React, { useEffect } from 'react';
-import HookLook from "../components/auth/HookLook";
-import NavbarHome from '../components/Navbar/navbar';
+import LoginPage from '../components/Navbar/Logins';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
-import { gapi } from "gapi-script";
-
-
-
-const clientId = "786066878087-jgnsj8gl3p61sljp3pbbuotj9iremar0.apps.googleusercontent.com"
-const Home = () => {
-    useEffect(() => {
-        function start() {
-            gapi.load('auth2', () => {
-                gapi.auth2.init({
-                    client_id: clientId
-                });
-            });
-        }
-        start();
-    }, []);
+const Homes = () => {
 
     return (
         <>
-            <div>
-                <HookLook />
+            <Container>
+                <Row>
+                    <Col></Col>
+                    <Col className="mt-5">
+
+                        <LoginPage />
+
+                    </Col>
+                    <Col></Col>
+                </Row>
+            </Container>
 
 
-            </div>
+
 
         </>
     )
 }
 
-export default Home;
+export default Homes;

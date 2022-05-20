@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Trend from '../../Pages/Trend';
 import {
 	Card,
 	Container,
@@ -16,6 +17,7 @@ import {
 	Form
 } from 'react-bootstrap';
 import MediaControlCard from '../Models/CardD';
+import { Nav } from 'react-bootstrap';
 
 //faccio una search da aggiungere in una navbar
 
@@ -47,12 +49,8 @@ const CercaBox = () => {
 					<FormControl type="text" placeholder="Cerca" value={cerca} onChange={handleChange} />
 				</Col>
 				<Col>
-					<Button variant="primary" onClick={searchElement}>
-						Cerca
-					</Button>
-					<Button variant="primary" href="/Trend">
-						Home
-					</Button>
+					<Button onClick={searchElement}>Cerca</Button>
+					<Nav.Link href="/Trend" />
 				</Col>
 			</Row>
 			<ListGroup>
