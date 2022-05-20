@@ -6,11 +6,14 @@ import Portada from "../components/Models/Slider/Portada";
 import NavbarHome from "../components/Navbar/navbar";
 
 
+
 const Trend = () => {
     return (
         <>
             <div className="trendBackground">
                 <NavbarHome />
+
+
                 <Portada />
 
                 <Row>
