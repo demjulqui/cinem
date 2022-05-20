@@ -15,7 +15,7 @@ const GenreAnimazione = () => {
 
 	return (
 		<div>
-			<h1>Animazione</h1>
+			<h1 className='mt-4 contactTitolo'>Animazione</h1>
 			<SliderComponent id={movies} />
 		</div>
 	);

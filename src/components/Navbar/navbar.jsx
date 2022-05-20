@@ -1,15 +1,12 @@
 import Navbar from 'react-bootstrap/Navbar';
 import React, { useState, useEffect } from 'react';
 import { Container, Nav, NavDropdown, Row, Col } from 'react-bootstrap';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import Layout from '../../Pages/Layout';
 import Home from '../../Pages/Home';
 import Trend from '../../Pages/Trend';
 import Contact from '../../Pages/Contact';
 import CercaBox from './Cerca';
 import { styled } from '@mui/styles';
-import { makeStyles } from '@mui/styles';
 import Button from '@mui/material/Button';
 
 const NavbarHome = () => {

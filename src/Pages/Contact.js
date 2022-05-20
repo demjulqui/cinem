@@ -19,6 +19,7 @@ import GenreMisery from "../components/Genre/GenreMistero";
 import GenreNews from "../components/Genre/GenreNews";
 import GenreReality from "../components/Genre/GenreReality";
 import GenreSciFi from "../components/Genre/genreSciFi";
+import Footer from "../components/Footer/Footer";
 
 
 
@@ -41,6 +42,7 @@ const Contact = () => {
             <GenreNews />
             <GenreReality />
             <GenreSciFi />
+            <Footer />
         </div>
 
 

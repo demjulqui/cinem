@@ -15,7 +15,7 @@ const GenreDocumentario = () => {
 
 	return (
 		<div>
-			<h1>Documentario</h1>
+			<h1 className='mt-4 contactTitolo'>Documentario</h1>
 			<SliderComponent id={movies} />
 		</div>
 	);
