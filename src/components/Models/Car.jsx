@@ -23,7 +23,12 @@ export default function RecipeReviewCard(props) {
 					<h5 className="card-title">{props.title}</h5>
 					<p className="card-text">
 						<small className="text-muted">Release Date {props.release_date}</small>
-						<small className="text-muted">User Rating {(props.vote_average * 10).toFixed(0)}%</small>
+					</p>
+
+					<p>
+						<small className="text-muted">
+							{props.vote_average ? 'user rating' + props.vote_average : ''}
+						</small>
 					</p>
 				</div>
 			</div>
