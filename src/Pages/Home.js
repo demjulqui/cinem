@@ -1,6 +1,6 @@
 
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import LoginPage from '../components/Navbar/Logins';
 import { Container, Row, Col } from 'react-bootstrap';
 

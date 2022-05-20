@@ -3,20 +3,9 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Trend from '../../Pages/Trend';
-import {
-	Card,
-	Container,
-	Row,
-	Col,
-	ListGroup,
-	ListGroupItem,
-	Figure,
-	Button,
-	FormControl,
-	Form
-} from 'react-bootstrap';
-import MediaControlCard from '../Models/CardD';
+
+import { Row, Col, ListGroup, ListGroupItem, Figure, Button, FormControl, Form } from 'react-bootstrap';
+
 import { Nav } from 'react-bootstrap';
 
 //faccio una search da aggiungere in una navbar

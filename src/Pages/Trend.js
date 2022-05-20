@@ -13,16 +13,11 @@ const Trend = () => {
         <>
             <div className="trendBackground">
                 <NavbarHome />
-
-
-
                 <Portada />
-
                 <Row>
                     <Col className="mt-5">
                         <TopRatedMovie />
                     </Col>
-
                     <Col className="mt-5">
                         <PopularDay />
                     </Col>
@@ -32,13 +27,8 @@ const Trend = () => {
                 </Row>
                 <Footer />
             </div>
-
-
         </>
-
-
     )
-
 };
 
 export default Trend; 
