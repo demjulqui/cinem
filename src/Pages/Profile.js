@@ -24,7 +24,7 @@ const Profile = () => {
                         <Avatar
                             alt="Remy Sharp"
                             src="https://cdn.80.lv/api/upload/content/db/images/6243c6e740361/widen_920x0.jpg"
-                            sx={{ width: 200, height: 200 }}
+                            sx={{ width: 250, height: 250 }}
                         />
 
                     </Nav.Link>
@@ -36,7 +36,7 @@ const Profile = () => {
                         <Avatar
                             alt="Remy Sharp"
                             src="https://www.ommercato.com/wp-content/uploads/2021/11/who-is-ekko-in-league-of-legends-arcane-voice-actor-character-explanation.jpg"
-                            sx={{ width: 200, height: 200 }}
+                            sx={{ width: 250, height: 250 }}
                         />
 
                     </Nav.Link>
@@ -47,7 +47,18 @@ const Profile = () => {
                         <Avatar
                             alt="Remy Sharp"
                             src="http://pm1.narvii.com/6096/f66cafb0e2fbe7aa3f6c7cede0895cf61a0fcc93_00.jpg"
-                            sx={{ width: 200, height: 200 }}
+                            sx={{ width: 250, height: 250 }}
+                        />
+
+                    </Nav.Link>
+                </Col>
+                <Col>
+                    <Nav.Link href="/Trend" element={<Trend />}>
+
+                        <Avatar
+                            alt="Remy Sharp"
+                            src="https://png.pngtree.com/png-vector/20190307/ourlarge/pngtree-vector-add-user-icon-png-image_780603.jpg"
+                            sx={{ width: 250, height: 250 }}
                         />
 
                     </Nav.Link>
