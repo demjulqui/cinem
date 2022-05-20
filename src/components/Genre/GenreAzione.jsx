@@ -15,7 +15,7 @@ const GenreAzione = () => {
 
 	return (
 		<div>
-			<h1>Azione</h1>
+			<h1 className='mt-4 contactTitolo'>Azione</h1>
 			<SliderComponent id={movies} />
 		</div>
 	);

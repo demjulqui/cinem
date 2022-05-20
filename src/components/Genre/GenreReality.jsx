@@ -15,7 +15,7 @@ const GenreReality = () => {
 
 	return (
 		<div>
-			<h1>Reality</h1>
+			<h1 className='mt-4 contactTitolo'>Reality</h1>
 			<SliderComponent id={movies} />
 		</div>
 	);

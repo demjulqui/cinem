@@ -15,7 +15,7 @@ const GenreFamily = () => {
 
 	return (
 		<div>
-			<h1>Famiglia</h1>
+			<h1 className='mt-4 contactTitolo'>Famiglia</h1>
 			<SliderComponent id={movies} />
 		</div>
 	);

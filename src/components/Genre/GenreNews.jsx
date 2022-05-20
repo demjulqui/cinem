@@ -15,7 +15,7 @@ const GenreNews = () => {
 
 	return (
 		<div>
-			<h1>News</h1>
+			<h1 className='mt-4 contactTitolo'>News</h1>
 			<SliderComponent id={movies} />
 		</div>
 	);

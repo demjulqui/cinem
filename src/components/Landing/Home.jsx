@@ -2,8 +2,7 @@ import React from 'react';
 import online from '../images/online.jpg';
 import Common from './Common';
 import Navbar from './Navbar';
-import Trend from '../../Pages/Trend';
-import { Link } from 'react-router-dom';
+import FooterLanding from '../Footer/FooterLanding';
 
 const HomeLanding = () => {
 	return (
@@ -17,6 +16,8 @@ const HomeLanding = () => {
 				visit="/Trend"
 				btnname="Inizia ora"
 			/>
+			<FooterLanding />
+			
 		</div>
 	);
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './Card';
 import ServiceData from './ServiceData';
 import Navbar from './Navbar';
+import FooterLanding from '../Footer/FooterLanding';
 
 const Services = () => {
 	return (
@@ -21,6 +22,7 @@ const Services = () => {
 					</div>
 				</div>
 			</div>
+			<FooterLanding />
 		</div>
 	);
 };
