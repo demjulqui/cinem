@@ -50,8 +50,8 @@ const CercaBox = () => {
 					<Button variant="primary" onClick={searchElement}>
 						Cerca
 					</Button>
-					<Button>
-						<a href="/Trend">Home</a>
+					<Button variant="primary" href="/Trend">
+						Home
 					</Button>
 				</Col>
 			</Row>

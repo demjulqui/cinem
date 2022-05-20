@@ -1,10 +1,3 @@
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import { Link } from 'react-router-dom';
 import './Car.css';
 import React, { useState, useEffect } from 'react';
 
@@ -19,18 +12,13 @@ export default function RecipeReviewCard(props) {
 
 	return (
 		<div className="col-sm-3">
-			<div
-				style={{ flex: '13rem', cursor: 'pointer', border: 'none' }}
-				className="card card-template mt-3"
-				onClick={() => props.getMovieDetails()}
-			>
-				<Link to={`/movies/${props.id}`}>
-					<img
-						className="card-img-top hover"
-						src={`https://image.tmdb.org/t/p/w500/${props.image}`}
-						alt={`${props.title}`}
-					/>
-				</Link>
+			<div style={{ flex: '13rem', cursor: 'pointer', border: 'none' }} className="card card-template mt-3">
+				<img
+					className="card-img-top hover"
+					src={`https://image.tmdb.org/t/p/w500/${props.image}`}
+					alt={`${props.title}`}
+				/>
+
 				<div className="card-body text-dark h5">
 					<h5 className="card-title">{props.title}</h5>
 					<p className="card-text">

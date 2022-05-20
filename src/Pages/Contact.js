@@ -11,28 +11,36 @@ import GenreAvventura from "../components/Genre/GenreAventura";
 import GenreAnimazione from "../components/Genre/GenreAnimazione";
 import GenreCommedia from "../components/Genre/GenreCommedia";
 import GenreCrime from "../components/Genre/GenreCrime";
-
+import GenreDocumentario from "../components/Genre/GenreDocumentario";
+import GenreDramma from "../components/Genre/GenreDramma";
+import GenreFamily from "../components/Genre/GenreFamiglia";
+import GenreKids from "../components/Genre/GenreKids";
+import GenreMisery from "../components/Genre/GenreMistero";
+import GenreNews from "../components/Genre/GenreNews";
+import GenreReality from "../components/Genre/GenreReality";
+import GenreSciFi from "../components/Genre/genreSciFi";
 
 
 
 
 const Contact = () => {
     return <>
-        <div>
+        <div className="contactBackGround">
             <NavbarHome />
-
-
-
-
             <Banner2 />
-
-            <TVWatch />
-
             <GenreAzione />
             <GenreAvventura />
             <GenreAnimazione />
             <GenreCommedia />
             <GenreCrime />
+            <GenreDocumentario />
+            <GenreDramma />
+            <GenreFamily />
+            <GenreKids />
+            <GenreMisery />
+            <GenreNews />
+            <GenreReality />
+            <GenreSciFi />
         </div>
 
 

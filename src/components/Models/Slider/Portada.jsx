@@ -3,7 +3,7 @@ import axios from 'axios';
 import sliderSettings from './SliderSett';
 import Slider from 'react-slick';
 import { Image, Container } from 'react-bootstrap';
-
+import '../Car.css';
 const Portada = () => {
 	const [ id, setId ] = useState([]);
 

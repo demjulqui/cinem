@@ -17,7 +17,7 @@ const Banner2 = () => {
 				<Carousel.Item key={movie.id}>
 					<div className="banner-wrapper">
 						<img
-							className="d-block w-100 img-fluid"
+							className="d-block w-100 img-fluid kenburns-bottom-left"
 							src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
 							alt={movie.name}
 						/>
@@ -25,7 +25,7 @@ const Banner2 = () => {
 
 					<Carousel.Caption>
 						<h3>{movie.title}</h3>
-						{(movie.average_rating.toFixed(1) / 10 * 100).toFixed()}
+						Rating: {(movie.average_rating.toFixed(1) / 10 * 100).toFixed()}
 					</Carousel.Caption>
 				</Carousel.Item>
 			))}

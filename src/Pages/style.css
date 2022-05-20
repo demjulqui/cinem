@@ -5,3 +5,13 @@
 	margin-top: -50px;
 	margin-left: -50px;
 }
+.contactBackGround {
+	background: rgb(45, 193, 253);
+	background: linear-gradient(
+		0deg,
+		rgba(45, 193, 253, 1) 0%,
+		rgba(38, 128, 199, 1) 9%,
+		rgba(30, 63, 145, 1) 27%,
+		rgba(2, 0, 10, 1) 100%
+	);
+}

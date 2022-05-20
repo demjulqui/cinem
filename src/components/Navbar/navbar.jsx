@@ -77,7 +77,7 @@ const NavbarHome = () => {
 		<div>
 			<Navbar bg="light" expand="lg">
 				<Container fluid>
-					<Navbar.Brand href="/">Pagina Principale</Navbar.Brand>
+					<Navbar.Brand href="/">Films</Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbarScroll" />
 					<Navbar.Collapse id="navbarScroll">
 						<Col>
@@ -91,11 +91,11 @@ const NavbarHome = () => {
 									Home
 								</Nav.Link>
 								<Nav.Link href="/Trend" element={<Trend />}>
-									Preferiti
+									Trend
 								</Nav.Link>
 
 								<Nav.Link href="/Contact" element={<Contact />}>
-									Contact
+									Genre
 								</Nav.Link>
 							</Nav>
 						</Col>
