@@ -7,15 +7,15 @@ import '../images/scrittablu.png';
 const LoginPage = () => {
 	return (
 		<div>
-			<Card style={{ width: '18rem' }}>
+			<Card  bg="transparent" className='border-0' style={{ width: '20rem' }}>
 				<Card.Img
 					variant="top"
-					src="https://cdn.discordapp.com/attachments/973882360368074804/977139741927542784/scrittablu.png"
+					src="https://cdn.discordapp.com/attachments/973882360368074804/977139742195974164/solobordoblu.png"
 				/>
-				<Card.Body>
+				<Card.Body  className='rounded bg-light'>
 					<Form>
 						<div className="Form-group">
-							<label htmlFor="exampleInputEmail1">Email address</label>
+							<label htmlFor="exampleInputEmail1" className="profileCard mt-3">Email address</label><br />
 							<input
 								type="email"
 								className="Form-control"
@@ -23,13 +23,9 @@ const LoginPage = () => {
 								aria-describedby="emailHelp"
 								placeholder="Enter email"
 							/>
-							<small id="emailHelp" className="Form-text text-muted">
-								<hr />
-								Inserisci la Tua Mail.
-							</small>
 						</div>
-						<div className="Form-group">
-							<label htmlFor="exampleInputPassword1">Password</label>
+						<div className="Form-group mt-3">
+							<label htmlFor="exampleInputPassword1 " className="profileCard mt-3">Password</label><br />
 							<input
 								type="password"
 								className="Form-control"
@@ -39,12 +35,12 @@ const LoginPage = () => {
 						</div>
 						<div className="Form-group Form-check">
 							<input type="checkbox" className="Form-check-input" id="exampleCheck1" />
-							<label className="Form-check-label" htmlFor="exampleCheck1">
+							<label className="Form-check-label profileCard mt-3" htmlFor="exampleCheck1">
 								Check me out
 							</label>
 						</div>
 						<Nav.Link href="/Profile">
-							<Button variant="primary">Login</Button>
+							<Button className="mt-3" variant="primary">Login</Button>
 						</Nav.Link>
 					</Form>
 				</Card.Body>
