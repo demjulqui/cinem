@@ -3,7 +3,6 @@ import { Card, Form, Button } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import axios from 'axios';
 import '../images/scrittablu.png';
-import axios from 'axios';
 
 const LoginPage = () => {
 	const [ cerca, setCerca ] = useState('');

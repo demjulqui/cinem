@@ -205,6 +205,11 @@ code {
     transform: scale(0.8);
     transition-duration: 0.5s;
 }
+.moveAvatarAdd{
+	display: flex;
+	object-position: right;
+	justify-content: left;
+}
 
 
 /* ===============================
