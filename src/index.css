@@ -112,6 +112,8 @@ code {
 	text-align: right;
 }
 
+
+
 /* already animated svg available */
 #header .animated {
 	animation: up-down 1.1s ease-in-out infinite alternate-reverse both;
