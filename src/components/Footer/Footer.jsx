@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDBFooter } from 'mdb-react-ui-kit';
+import { Container } from '@mui/material';
 
 export default function Footer() {
 	return (
@@ -32,12 +33,15 @@ export default function Footer() {
 								<i className="fas fa-gem me-3" />
 								Company name
 							</h6>
+							<container class='containerlogo'>
 							<img
+								class ="logo"
 								src="https://cdn.discordapp.com/attachments/973882360368074804/977139742195974164/solobordoblu.png"
 								alt="FilmS"
 								width="250"
 								height="150"
 							/>
+							</container>
 						</div>
 
 						<div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -62,11 +66,15 @@ export default function Footer() {
 								Films@info.com
 							</p>
 							<p style={{ color: 'white' }}>
-								<i className="fas fa-phone me-3" /> + 01 234 567 88
+								<i className="fas fa-phone me-3" /> Alessio Guidotti
 							</p>
 							<p style={{ color: 'white' }}>
-								<i className="fas fa-print me-3" /> + 01 234 567 89
+								<i className="fas fa-print me-3" /> Demerson Julio Quiroz
 							</p>
+							<p style={{ color: 'white' }}>
+								<i className="fas fa-print me-3" /> Lorenzo Bucci
+							</p>
+							
 						</div>
 					</div>
 				</div>
