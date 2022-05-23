@@ -3,7 +3,7 @@ import { MDBFooter } from 'mdb-react-ui-kit';
 
 export default function Footer() {
 	return (
-		<MDBFooter className="text-center text-lg-start text-muted" style={{ backgroundColor: '#0a4275' }}>
+		<MDBFooter class = 'footer' className="text-center text-lg-start text-muted" style={{ backgroundColor: '#3498db' }}>
 			<div>
 				<a href="" className="me-4 text-reset">
 					<a className="fab fa-facebook-f" />
@@ -45,14 +45,9 @@ export default function Footer() {
 								Products
 							</h6>
 							<p>
-								<a href="#!" className="text-reset">
-									<p style={{ color: 'white' }}>Angular</p>
-								</a>
-							</p>
-							<p>
-								<a href="#!" className="text-reset">
+								
 									<p style={{ color: 'white' }}>React</p>
-								</a>
+								
 							</p>
 						</div>
 						<div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -64,7 +59,7 @@ export default function Footer() {
 							</p>
 							<p style={{ color: 'white' }}>
 								<i className="fas fa-envelope me-3" />
-								Film@info.com.co
+								Films@info.com
 							</p>
 							<p style={{ color: 'white' }}>
 								<i className="fas fa-phone me-3" /> + 01 234 567 88

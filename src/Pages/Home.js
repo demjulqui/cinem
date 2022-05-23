@@ -9,18 +9,19 @@ const Homes = () => {
 
     return (
         <>
+        <div className='LoginBackground'>
             <Container>
                 <Row>
                     <Col></Col>
                     <Col className="mt-5">
 
-                        <LoginPage />
+                        <LoginPage className='LoginBackground'/>
 
                     </Col>
                     <Col></Col>
                 </Row>
             </Container>
-
+        </div>
 
 
 

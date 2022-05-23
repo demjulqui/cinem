@@ -2,7 +2,7 @@ import React from 'react';
 import scrittablu from '../images/scrittablu.png';
 import Common from './Common';
 import Navbar from './Navbar';
-import FooterLanding from '../Footer/FooterLanding';
+import Footer from '../Footer/Footer';
 
 const HomeLanding = () => {
 	return (
@@ -16,7 +16,7 @@ const HomeLanding = () => {
 				visit="/Login"
 				btnname="Inizia ora"
 			/>
-			<FooterLanding />
+			<Footer />
 		</div>
 	);
 };
