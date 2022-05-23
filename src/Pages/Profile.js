@@ -26,7 +26,7 @@ const Profile = () => {
 
                             <Avatar
                                 alt="Remy Sharp"
-                                src="https://cdn.80.lv/api/upload/content/db/images/6243c6e740361/widen_920x0.jpg"
+                                src="https://www.cronacheletterarie.com/wp-content/uploads/2022/01/Arcane.jpg"
                                 sx={{ width: 225, height: 225 }}
                                 className="click"
                             />

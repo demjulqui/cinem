@@ -176,14 +176,14 @@ code {
 .LoginBackground {
 	margin: auto ;
     width: auto;
-    height: 753px;
+    height: 1000px;
 	background: rgb(31, 188, 220);
 	background: radial-gradient(circle, rgba(31, 188, 220, 1) 0%, rgba(16, 16, 79, 1) 55%, rgba(0, 0, 7, 1) 92%);
 }
 .ChooseBackground {
 	margin: auto ;
     width: auto;
-    height: 753px;
+    height: 1000px;
 	background: rgb(31, 188, 220);
 	background: radial-gradient(circle, rgba(31, 188, 220, 1) 0%, rgba(16, 16, 79, 1) 55%, rgba(0, 0, 7, 1) 92%);
 	
@@ -204,4 +204,24 @@ code {
 .click:hover {
     transform: scale(0.8);
     transition-duration: 0.5s;
+}
+
+
+/* ===============================
+    # Footer
+==================================*/
+
+.containerlogo{
+    position: relative;
+}
+
+.logo{
+	display: flex;
+	justify-content:center;
+	text-align: center;
+	margin: 10px 0;
+	padding: 1mm;
+	transform: translateX(-20%);
+	
+	
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Form, Button } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
-import Trend from '../../Pages/Trend';
+import axios from 'axios';
 import '../images/scrittablu.png';
 import axios from 'axios';
 
