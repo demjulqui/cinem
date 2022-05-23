@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // http://127.0.0.1:2000/api/movie/genre ---> lista generi
 import axios from 'axios';
 
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, CardGroup } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 
 const ModalProva = (props) => {
@@ -26,27 +26,17 @@ const ModalProva = (props) => {
 	return (
 		<div>
 			{movies.map((item) => (
-				<Card style={{ width: '18rem' }} onClick={() => handleShow(item)}>
+				<Card style={{ width: '18rem' }} key={item.id} onClick={() => handleShow(item)}>
 					<Card.Img variant="top" src={'http://image.tmdb.org/t/p/w185/' + item.poster_path} />
-					<Card.Body>
-						<Card.Title>{item.title}</Card.Title>
-						<Card.Text>{item.overview}</Card.Text>
-					</Card.Body>
 				</Card>
 			))}
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
 					<Modal.Title>{content.title}</Modal.Title>
 				</Modal.Header>
-				<Modal.Body> {content.overview} </Modal.Body>
-				<Modal.Footer>
-					<Button variant="secondary" onClick={handleClose}>
-						Close
-					</Button>
-					<Button variant="primary" onClick={handleClose}>
-						Save Changes
-					</Button>
-				</Modal.Footer>
+				//faccio un operatore ternario se non ce niente scrivere "no overview"
+				<Modal.Body> {content.overview ? content.overview : 'no overview'} </Modal.Body>
+				<Modal.Footer />
 			</Modal>
 		</div>
 	);

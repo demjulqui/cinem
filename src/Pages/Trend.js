@@ -8,9 +8,6 @@ import Footer from "../components/Footer/Footer";
 import ModalProva from "./prova";
 
 
-
-
-
 const Trend = () => {
     return (
         <>

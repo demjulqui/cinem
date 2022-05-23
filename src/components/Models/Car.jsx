@@ -1,8 +1,8 @@
 import './Car.css';
 import React, { useState, useEffect } from 'react';
-import { Card, Image, Col, Row, Container } from 'react-bootstrap';
+import { Card, Image, Col, Row, Container, Button } from 'react-bootstrap';
 import { MDBBtn } from 'mdb-react-ui-kit';
-import { Modal } from 'bootstrap';
+import { Modal } from 'react-bootstrap';
 export default function RecipeReviewCard(props) {
 	const [ show, setShow ] = useState(false);
 	const handleClose = () => setShow(false);
@@ -11,12 +11,28 @@ export default function RecipeReviewCard(props) {
 
 	return (
 		<div>
+			<Card style={{ width: '18rem' }} key={props.id} onClick={() => handleShow(props)} />
 			<Card.Img
 				variant="top"
 				src={`https://image.tmdb.org/t/p/w500${props.image}`}
 				className="img-fluid"
 				onClick={handleShow}
 			/>
+			<Card />
+			<Modal show={show} onHide={handleClose}>
+				<Modal.Header closeButton>
+					<Modal.Title>{props.title}</Modal.Title>
+				</Modal.Header>
+				<Modal.Body> {props.overview} </Modal.Body>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={handleClose}>
+						Close
+					</Button>
+					<Button variant="primary" onClick={handleClose}>
+						Save Changes
+					</Button>
+				</Modal.Footer>
+			</Modal>
 		</div>
 	);
 }
