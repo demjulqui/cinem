@@ -8,24 +8,37 @@ import { Modal } from 'react-bootstrap';
 
 const ModalProva = (props) => {
 	const [ show, setShow ] = useState(false);
-
 	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
+	const [ content, setContent ] = useState({});
+	const handleShow = (item) => {
+		setShow(true);
+		setContent(item);
+	};
+
+	const [ movies, setMovies ] = useState([]);
+	useEffect(() => {
+		axios.get(`http://127.0.0.1:2000/api/tv/ricercaperGenere?genre=azione`).then((res) => {
+			setMovies(res.data);
+			console.log(movies);
+		});
+	}, []);
 
 	return (
 		<div>
-			<Card.Img
-				onClick={handleShow}
-				fluid
-				variant="top"
-				src={`https://image.tmdb.org/t/p/w500${props.backdrop_path}`}
-				className="img-fluid"
-			/>
+			{movies.map((item) => (
+				<Card style={{ width: '18rem' }} onClick={() => handleShow(item)}>
+					<Card.Img variant="top" src={'http://image.tmdb.org/t/p/w185/' + item.poster_path} />
+					<Card.Body>
+						<Card.Title>{item.title}</Card.Title>
+						<Card.Text>{item.overview}</Card.Text>
+					</Card.Body>
+				</Card>
+			))}
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
-					<Modal.Title>{props.Title}</Modal.Title>
+					<Modal.Title>{content.title}</Modal.Title>
 				</Modal.Header>
-				<Modal.Body> {props.overview} </Modal.Body>
+				<Modal.Body> {content.overview} </Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleClose}>
 						Close
