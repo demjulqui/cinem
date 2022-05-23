@@ -1,73 +1,33 @@
 import Navbar from 'react-bootstrap/Navbar';
 import React, { useState, useEffect } from 'react';
-import { Container, Nav, NavDropdown, Row, Col } from 'react-bootstrap';
+import { Row, Col, ListGroup, ListGroupItem, Figure, Button, FormControl, Nav, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 import Layout from '../../Pages/Layout';
 import Home from '../../Pages/Home';
 import Trend from '../../Pages/Trend';
 import Contact from '../../Pages/Contact';
-import CercaBox from './Cerca';
-import { styled } from '@mui/styles';
-import Button from '@mui/material/Button';
+import axios from 'axios';
 
 const NavbarHome = () => {
-	const [ cartItems, setCartItems ] = useState(0);
-	const [ favItems, setFavItems ] = useState(0);
-	const [ cart, setCart ] = useState([]);
-	const [ fav, setFav ] = useState([]);
+	const [ cerca, setCerca ] = useState('');
+	const [ cercaResult, setCercaResult ] = useState([]);
 
-	useEffect(() => {
-		const cart = JSON.parse(localStorage.getItem('cart'));
-		const fav = JSON.parse(localStorage.getItem('fav'));
-		if (cart) {
-			setCart(cart);
-			setCartItems(cart.length);
-		}
-		if (fav) {
-			setFav(fav);
-			setFavItems(fav.length);
-		}
-	}, []);
+	axios.defaults.baseURL = 'http://localhost:2000/';
 
-	const addToCart = (id) => {
-		const cart = JSON.parse(localStorage.getItem('cart'));
-		if (cart) {
-			if (cart.includes(id)) {
-				cart.splice(cart.indexOf(id), 1);
-			} else {
-				cart.push(id);
-			}
-		} else {
-			cart.push(id);
-		}
-		localStorage.setItem('cart', JSON.stringify(cart));
-		setCart(cart);
-		setCartItems(cart.length);
+	const searchElement = async (e) => {
+		e.preventDefault();
+		await axios
+			.get(`api/search/multi`, {
+				params: {
+					query: cerca
+				}
+			})
+			.then((results) => setCercaResult(results.data));
 	};
 
-	const MyButton = styled(Button)({
-		background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-		border: 0,
-		borderRadius: 3,
-		boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-		color: 'white',
-		height: 48,
-		padding: '0 30px'
-	});
-
-	const addToFav = (id) => {
-		const fav = JSON.parse(localStorage.getItem('fav'));
-		if (fav) {
-			if (fav.includes(id)) {
-				fav.splice(fav.indexOf(id), 1);
-			} else {
-				fav.push(id);
-			}
-		} else {
-			fav.push(id);
-		}
-		localStorage.setItem('fav', JSON.stringify(fav));
-		setFav(fav);
-		setFavItems(fav.length);
+	const handleChange = (e) => {
+		setCerca(e.target.value);
 	};
 
 	return (
@@ -95,11 +55,55 @@ const NavbarHome = () => {
 							</Nav>
 						</Col>
 						<Col>
-							<CercaBox />
+							<FormControl
+								type="text"
+								placeholder="Search"
+								className="mr-sm-2"
+								onChange={handleChange}
+								onKeyPress={(e) => {
+									if (e.key === 'Enter') {
+										searchElement(e);
+									}
+								}}
+							/>
+							<Button variant="outline-success" onClick={searchElement}>
+								Search
+							</Button>
+							<Nav.Link href="/Trend" />
 						</Col>
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
+			<Container fluid>
+				<Row>
+					<Col>
+						<ListGroup>
+							{cercaResult.map((element) => (
+								<ListGroupItem key={element._id}>
+									<Figure>
+										<Row>
+											<Col>
+												<Figure.Image
+													width={171}
+													height={180}
+													alt="171x180"
+													src={`https://image.tmdb.org/t/p/w500/${element.poster_path}`}
+												/>
+											</Col>
+											<Col>
+												<Figure.Caption>
+													<h3>{element.title}</h3>
+													<p>{element.overview}</p>
+												</Figure.Caption>
+											</Col>
+										</Row>
+									</Figure>
+								</ListGroupItem>
+							))}
+						</ListGroup>
+					</Col>
+				</Row>
+			</Container>
 		</div>
 	);
 };

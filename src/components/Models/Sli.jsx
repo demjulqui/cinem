@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RecipeReviewCard from './Car';
+import ModalFilm from '../../Pages/FilmInfo';
 
 import Slider from 'react-slick';
 //aggiungo le props che mi servono per la slider
@@ -18,16 +19,18 @@ export default function SliderComponent(props) {
 		<div>
 			<Slider {...settings}>
 				{props.id.map((item) => (
-					<RecipeReviewCard
-						key={item.id}
-						title={item.title}
-						image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-						overview={item.overview}
-						release_date={item.release_date}
-						vote_average={item.vote_average}
-					/>
+					<div>
+						<RecipeReviewCard
+							id={item.id}
+							title={item.title}
+							image={item.poster_path}
+							overview={item.overview}
+						/>
+					</div>
 				))}
 			</Slider>
 		</div>
 	);
 }
+
+// import React, { useState, useEffect } from 'react';
