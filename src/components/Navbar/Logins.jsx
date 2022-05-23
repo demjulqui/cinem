@@ -5,6 +5,26 @@ import Trend from '../../Pages/Trend';
 import '../images/scrittablu.png';
 
 const LoginPage = () => {
+	const [ cerca, setCerca ] = useState('');
+	const [ cercaResult, setCercaResult ] = useState([]);
+
+	axios.defaults.baseURL = 'http://localhost:2000/';
+
+	const searchElement = async (e) => {
+		e.preventDefault();
+		await axios
+			.get(`api/search/multi`, {
+				params: {
+					query: cerca
+				}
+			})
+			.then((results) => setCercaResult(results.data));
+	};
+
+	const handleChange = (e) => {
+		setCerca(e.target.value);
+	};
+
 	return (
 		<div>
 			<Card  bg="transparent" className='border-0' style={{ width: '20rem' }}>

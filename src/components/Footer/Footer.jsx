@@ -6,25 +6,24 @@ export default function Footer() {
 		<MDBFooter class = 'footer' className="text-center text-lg-start text-muted" style={{ backgroundColor: '#3498db' }}>
 			<div>
 				<a href="" className="me-4 text-reset">
-					<i className="fab fa-facebook-f" />
+					<a className="fab fa-facebook-f" />
 				</a>
 				<a href="" className="me-4 text-reset">
-					<i className="fab fa-twitter" />
+					<a className="fab fa-twitter" />
 				</a>
 				<a href="" className="me-4 text-reset">
-					<i className="fab fa-google" />
+					<a className="fab fa-google" />
 				</a>
 				<a href="" className="me-4 text-reset">
-					<i className="fab fa-instagram" />
+					<a className="fab fa-instagram" />
 				</a>
 				<a href="" className="me-4 text-reset">
-					<i className="fab fa-linkedin" />
+					<a className="fab fa-linkedin" />
 				</a>
 				<a href="" className="me-4 text-reset">
-					<i className="fab fa-github" />
+					<a className="fab fa-github" />
 				</a>
 			</div>
-
 			<section className="">
 				<div className="container text-center text-md-start mt-5">
 					<div className="row mt-3">

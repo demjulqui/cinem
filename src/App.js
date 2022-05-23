@@ -8,6 +8,7 @@ import Trend from './Pages/Trend';
 import Contact from './Pages/Contact';
 import Homes from './Pages/Home';
 import Profile from './Pages/Profile';
+import { propsToClassKey } from '@mui/styles';
 
 
 

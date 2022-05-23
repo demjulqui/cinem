@@ -6,9 +6,10 @@ import Trend from './Trend';
 import "./profile.css";
 
 
+
 const Profile = () => {
 
-    //faccio una funzione che mi permette di cliccare sull'avatar e 
+
 
     return (
         <>
