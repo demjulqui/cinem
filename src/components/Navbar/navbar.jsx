@@ -50,27 +50,31 @@ const NavbarHome = () => {
 								</Nav.Link>
 
 								<Nav.Link href="/Contact" element={<Contact />}>
-									Genre
+									Generi
 								</Nav.Link>
 							</Nav>
 						</Col>
-						<Col>
+						<Row>
+							<Col>
 							<FormControl
 								type="text"
-								placeholder="Search"
+								placeholder="Cerca . . ."
 								className="mr-sm-2"
 								onChange={handleChange}
 								onKeyPress={(e) => {
 									if (e.key === 'Enter') {
 										searchElement(e);
 									}
-								}}
-							/>
-							<Button variant="outline-success" onClick={searchElement}>
+								}}>
+							</FormControl>
+							</Col>
+							<Col>
+							<Button variant="outline-primary" onClick={searchElement}>
 								Search
 							</Button>
 							<Nav.Link href="/Trend" />
-						</Col>
+							</Col>
+						</Row>
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
