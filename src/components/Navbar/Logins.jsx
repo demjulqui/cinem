@@ -3,6 +3,7 @@ import { Card, Form, Button } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import Trend from '../../Pages/Trend';
 import '../images/scrittablu.png';
+import axios from 'axios';
 
 const LoginPage = () => {
 	const [ cerca, setCerca ] = useState('');
@@ -27,15 +28,18 @@ const LoginPage = () => {
 
 	return (
 		<div>
-			<Card  bg="transparent" className='border-0' style={{ width: '20rem' }}>
+			<Card bg="transparent" className="border-0" style={{ width: '20rem' }}>
 				<Card.Img
 					variant="top"
 					src="https://cdn.discordapp.com/attachments/973882360368074804/977139742195974164/solobordoblu.png"
 				/>
-				<Card.Body  className='rounded bg-light'>
+				<Card.Body className="rounded bg-light">
 					<Form>
 						<div className="Form-group">
-							<label htmlFor="exampleInputEmail1" className="profileCard mt-3">Email address</label><br />
+							<label htmlFor="exampleInputEmail1" className="profileCard mt-3">
+								Email address
+							</label>
+							<br />
 							<input
 								type="email"
 								className="Form-control"
@@ -45,7 +49,10 @@ const LoginPage = () => {
 							/>
 						</div>
 						<div className="Form-group mt-3">
-							<label htmlFor="exampleInputPassword1 " className="profileCard mt-3">Password</label><br />
+							<label htmlFor="exampleInputPassword1 " className="profileCard mt-3">
+								Password
+							</label>
+							<br />
 							<input
 								type="password"
 								className="Form-control"
@@ -60,7 +67,9 @@ const LoginPage = () => {
 							</label>
 						</div>
 						<Nav.Link href="/Profile">
-							<Button className="mt-3" variant="primary">Login</Button>
+							<Button className="mt-3" variant="primary">
+								Login
+							</Button>
 						</Nav.Link>
 					</Form>
 				</Card.Body>

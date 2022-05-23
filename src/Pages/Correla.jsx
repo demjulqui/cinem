@@ -8,6 +8,7 @@ import Contact from './Contact';
 import NoPage from './NoPage';
 import NavbarHome from '../components/Navbar/navbar';
 import Profile from './Profile';
+import prova from './prova';
 
 const HomePage = () => {
 	return (
@@ -20,6 +21,7 @@ const HomePage = () => {
 				<Route path="contact" element={<Contact />} />
 				<Route path="*" element={<NoPage />} />
 				<Route path="/Profile" element={<Profile />} />
+				<Route path="/prova" element={<prova />} />
 			</Routes>
 		</BrowserRouter>
 	);

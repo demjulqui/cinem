@@ -5,6 +5,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import Portada from "../components/Models/Slider/Portada";
 import NavbarHome from "../components/Navbar/navbar";
 import Footer from "../components/Footer/Footer";
+import ModalProva from "./prova";
+
+
 
 
 
@@ -24,6 +27,10 @@ const Trend = () => {
                     <Col className="mt-5">
                         <PopularMovie />
                     </Col>
+                    <ModalProva />
+
+
+
                 </Row>
                 <Footer />
             </div>

@@ -9,6 +9,7 @@ import Contact from './Pages/Contact';
 import Homes from './Pages/Home';
 import Profile from './Pages/Profile';
 import { propsToClassKey } from '@mui/styles';
+import prova from './Pages/prova';
 
 
 
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="Contact" element={<Contact />} />
           <Route path="Login" element={<Homes />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/prova" element={<prova />} />
         </Routes>
       </BrowserRouter>
     </>

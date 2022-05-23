@@ -8,7 +8,7 @@ import Home from '../../Pages/Home';
 import Trend from '../../Pages/Trend';
 import Contact from '../../Pages/Contact';
 import axios from 'axios';
-
+import prova from '../../Pages/prova';
 const NavbarHome = () => {
 	const [ cerca, setCerca ] = useState('');
 	const [ cercaResult, setCercaResult ] = useState([]);
@@ -47,6 +47,9 @@ const NavbarHome = () => {
 								<Nav.Link href="/" index element={<Home />} />
 								<Nav.Link href="/Trend" element={<Trend />}>
 									Trend
+								</Nav.Link>
+								<Nav.Link href="/Prova" element={<prova />}>
+									Prova
 								</Nav.Link>
 
 								<Nav.Link href="/Contact" element={<Contact />}>

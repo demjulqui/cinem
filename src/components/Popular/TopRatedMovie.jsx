@@ -16,7 +16,7 @@ const TopRatedMovie = () => {
 
 	return (
 		<div>
-			<h2 className='trendTitolo'>Top Rated</h2>
+			<h2 className="trendTitolo">Top Rated</h2>
 
 			<SliderComponent id={id} />
 		</div>
