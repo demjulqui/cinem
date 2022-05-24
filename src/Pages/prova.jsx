@@ -34,7 +34,7 @@ const ModalProva = (props) => {
 				<Modal.Header closeButton>
 					<Modal.Title>{content.title}</Modal.Title>
 				</Modal.Header>
-				//faccio un operatore ternario se non ce niente scrivere "no overview"
+
 				<Modal.Body> {content.overview ? content.overview : 'no overview'} </Modal.Body>
 				<Modal.Footer />
 			</Modal>

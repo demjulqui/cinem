@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
-import { Container, Row, Col, Button, Nav } from 'react-bootstrap';
+import { Container, Row, Col, Button, Nav, DropdownButton, Dropdown, Modal, FormGroup, Form } from 'react-bootstrap';
 import Trend from './Trend';
 import "./profile.css";
 
 
 
+
 const Profile = () => {
 
+    const [show, setShow] = useState(false);
     const [profiles, setProfile] = useState([
         {
 
-            name: "batman",
+            name: "Paulo",
             img: "https://www.cronacheletterarie.com/wp-content/uploads/2022/01/Arcane.jpg"
         },
         {
-            name: "batman2",
+            name: "Carlo",
             img: "https://www.ommercato.com/wp-content/uploads/2021/11/who-is-ekko-in-league-of-legends-arcane-voice-actor-character-explanation.jpg"
         },
 
@@ -31,6 +33,13 @@ const Profile = () => {
         img: "",
     })
 
+    //faccio una funzione che mi per mette di nascondere una parte della pagina con un click
+
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
     const chooseImg = (img) => {
         setNewUser(user => ({
             //utilizzo un rest operator
@@ -40,15 +49,26 @@ const Profile = () => {
     const handleChange = (e) => {
         setNewUser(user => ({
             //utilizzo un rest operator
+
             ...user, name: e.target.value
         }))
 
     }
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setProfile(profiles => [...profiles, newUser])
+    //faccio una funzione per aggiungere un nuovo utente devi scrivere qualcosa nel campo di testo senno non aggiungi nulla
+    const addUser = () => {
+        if (newUser.name !== "") {
+            setProfile(profiles => [...profiles, newUser])
+            setNewUser({
+                name: "",
+                img: "",
+            })
+        }
     }
 
+    //faccio una funzione che mi permette di eliminare un utente dall'array chiedendo all'utente il nome
+    const handleDelete = (name) => {
+        setProfile(profiles => profiles.filter(user => user.name !== name))
+    }
 
 
     return (
@@ -62,11 +82,14 @@ const Profile = () => {
                             <Col className='mt-5 d-flex justify-content-center'>
                                 <Nav.Link href="/Trend" element={<Trend />}>
                                     <Avatar
+
                                         alt={profile.name + " avatar"}
                                         src={profile.img}
                                         sx={{ width: 225, height: 225 }}
                                         className="click"
                                     />
+
+                                    <h3 className='text-center mt-3'>{profile.name}</h3>
                                 </Nav.Link>
                             </Col>
                         )}
@@ -75,6 +98,9 @@ const Profile = () => {
                     <Row>
                         <Col className='mt-5 d-flex justify-content-center'>
                             <Avatar
+                                //se non scrivo niente nell'input non aggiungo nulla
+                                onClick={handleShow}
+
                                 alt="new Avatar img"
                                 src="https://png.pngtree.com/png-vector/20190307/ourlarge/pngtree-vector-add-user-icon-png-image_780603.jpg"
                                 sx={{ width: 225, height: 225 }}
@@ -82,38 +108,48 @@ const Profile = () => {
                             />
                         </Col>
                     </Row>
-                    <form onSubmit={handleSubmit}>
-
-                        <Row>
-                            {avatars.map(avatar =>
-                                <Col className='mt-5 d-flex justify-content-center'>
-
-                                    <Avatar
-                                        onClick={() => chooseImg(avatar)}
-                                        alt="Avatar"
-                                        src={avatar}
-                                        sx={{ width: 150, height: 150 }}
-                                        className="click"
-                                    />
+                    <Modal show={show} onHide={handleClose} size="lg" aria-labelledby="example-modal-sizes-title-lg" >
+                        <form>
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                <Form.Label>nome user:{newUser.name}</Form.Label>
+                                <Form.Control type="text" placeholder="Modificare" onChange={handleChange} />
+                            </Form.Group>
+                            <Row>
+                                <Col>
+                                    <DropdownButton id="dropdown-basic-button" title="Delete">
+                                        {profiles.map(profile =>
+                                            <Dropdown.Item onClick={() => handleDelete(profile.name)}>{profile.name}</Dropdown.Item>
+                                        )}
+                                    </DropdownButton>
                                 </Col>
-                            )}
-                        </Row>
-                        <Row>
-                            <Col>
+                                <Col>
+                                    <Button variant="primary" onClick={addUser}>
+                                        aggingere utente
+                                    </Button>
+                                </Col>
 
-                                <input
-                                    type="text"
-                                    value={newUser.name}
-                                    onChange={handleChange}
-                                />
-                            </Col>
-                            <Col>
-                                <Button type="submit">
-                                    aggiunge Uttente
-                                </Button>
-                            </Col>
-                        </Row>
-                    </form>
+                            </Row>
+                            <Row>
+                                {avatars.map(avatar =>
+                                    <Col className='mt-5 d-flex justify-content-center'>
+
+                                        <Avatar
+                                            //faccio un onclick per aggingere un utente all'array
+                                            onClick={() => chooseImg(avatar)}
+
+                                            alt="Avatar"
+                                            src={avatar}
+                                            sx={{ width: 150, height: 150 }}
+                                            className="click"
+                                        />
+                                    </Col>
+                                )}
+                            </Row>
+
+                        </form>
+                    </Modal>
+
+
                 </Container>
             </div>
         </>
