@@ -20,18 +20,10 @@ export default function RecipeReviewCard(props) {
 			/>
 			<Card />
 			<Modal show={show} onHide={handleClose}>
-				<Modal.Header closeButton>
+				<Modal.Header>
 					<Modal.Title>{props.title}</Modal.Title>
 				</Modal.Header>
-				<Modal.Body> {props.overview} </Modal.Body>
-				<Modal.Footer>
-					<Button variant="secondary" onClick={handleClose}>
-						Close
-					</Button>
-					<Button variant="primary" onClick={handleClose}>
-						Save Changes
-					</Button>
-				</Modal.Footer>
+				<Modal.Body> {props.overview ? props.overview : 'non ce drescrizione'} </Modal.Body>
 			</Modal>
 		</div>
 	);

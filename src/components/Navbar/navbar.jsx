@@ -50,9 +50,6 @@ const NavbarHome = () => {
 								<Nav.Link href="/Trend" element={<Trend />}>
 									Trend
 								</Nav.Link>
-								<Nav.Link href="/Prova" element={<prova />}>
-									Prova
-								</Nav.Link>
 
 								<Nav.Link href="/Contact" element={<Contact />}>
 									Generi
