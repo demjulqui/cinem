@@ -216,17 +216,11 @@ code {
     # Footer
 ==================================*/
 
-.containerlogo{
-    position: relative;
-}
 
 .logo{
-	display: flex;
-	justify-content:center;
-	text-align: center;
-	margin: 10px 0;
-	padding: 1mm;
-	transform: translateX(-20%);
+
+	width: 100%;
+	max-width: 250px;
 	
 	
 }

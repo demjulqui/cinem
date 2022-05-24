@@ -17,6 +17,17 @@ const NavbarHome = () => {
 
 	const searchElement = async (e) => {
 		e.preventDefault();
+		if (cerca) {
+			await axios
+			.get(`api/search/multi`, {
+				params: {
+					query: cerca
+				}
+			})
+			.then((results) => setCercaResult(results.data));
+		}
+		
+
 		if (cerca.length > 0) {
 			await axios
 				.get(`api/search/multi`, {
@@ -26,6 +37,7 @@ const NavbarHome = () => {
 				})
 				.then((results) => setCercaResult(results.data));
 		}
+
 	};
 
 	const handleChange = (e) => {
