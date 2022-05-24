@@ -27,6 +27,17 @@ const NavbarHome = () => {
 			.then((results) => setCercaResult(results.data));
 		}
 		
+
+		if (cerca.length > 0) {
+			await axios
+				.get(`api/search/multi`, {
+					params: {
+						query: cerca
+					}
+				})
+				.then((results) => setCercaResult(results.data));
+		}
+
 	};
 
 	const handleChange = (e) => {
@@ -62,23 +73,23 @@ const NavbarHome = () => {
 						</Col>
 						<Row>
 							<Col>
-							<FormControl
-								type="text"
-								placeholder="Cerca . . ."
-								className="mr-sm-2"
-								onChange={handleChange}
-								onKeyPress={(e) => {
-									if (e.key === 'Enter') {
-										searchElement(e);
-									}
-								}}>
-							</FormControl>
+								<FormControl
+									type="text"
+									placeholder="Cerca . . ."
+									className="mr-sm-2"
+									onChange={handleChange}
+									onKeyPress={(e) => {
+										if (e.key === 'Enter') {
+											searchElement(e);
+										}
+									}}
+								/>
 							</Col>
 							<Col>
-							<Button variant="outline-primary" onClick={searchElement}>
-								Search
-							</Button>
-							<Nav.Link href="/Trend" />
+								<Button variant="outline-primary" onClick={searchElement}>
+									Search
+								</Button>
+								<Nav.Link href="/Trend" />
 							</Col>
 						</Row>
 					</Navbar.Collapse>

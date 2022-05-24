@@ -9,9 +9,6 @@ import ModalProva from "./prova";
 import React from "react";
 
 
-
-
-
 const Trend = () => {
     return (
         <>

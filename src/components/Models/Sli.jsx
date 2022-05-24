@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import RecipeReviewCard from './Car';
-import ModalFilm from '../../Pages/FilmInfo';
 
 import Slider from 'react-slick';
 //aggiungo le props che mi servono per la slider
