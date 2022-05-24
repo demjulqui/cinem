@@ -17,13 +17,16 @@ const NavbarHome = () => {
 
 	const searchElement = async (e) => {
 		e.preventDefault();
-		await axios
+		if (cerca) {
+			await axios
 			.get(`api/search/multi`, {
 				params: {
 					query: cerca
 				}
 			})
 			.then((results) => setCercaResult(results.data));
+		}
+		
 	};
 
 	const handleChange = (e) => {

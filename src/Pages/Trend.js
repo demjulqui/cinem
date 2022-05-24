@@ -6,6 +6,7 @@ import Portada from "../components/Models/Slider/Portada";
 import NavbarHome from "../components/Navbar/navbar";
 import Footer from "../components/Footer/Footer";
 import ModalProva from "./prova";
+import React from "react";
 
 
 

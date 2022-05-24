@@ -28,20 +28,19 @@ export default function Footer() {
 			<section className="">
 				<div className="container text-center text-md-start mt-5">
 					<div className="row mt-3">
-						<div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+						<div  className="text-center col-md-3 col-lg-4 col-xl-3 mb-4">
 							<h6 className="text-uppercase fw-bold mb-4" style={{ color: 'white' }}>
-								<i className="fas fa-gem me-3" />
+								
 								Company name
 							</h6>
-							<container class='containerlogo'>
+							
 							<img
 								class ="logo"
 								src="https://cdn.discordapp.com/attachments/973882360368074804/977139742195974164/solobordoblu.png"
 								alt="FilmS"
-								width="250"
-								height="150"
+		
 							/>
-							</container>
+							
 						</div>
 
 						<div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
