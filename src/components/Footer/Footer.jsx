@@ -51,7 +51,9 @@ export default function Footer() {
 									<p style={{ color: 'white' }}>JavaScript</p>
 									<p style={{ color: 'white' }}>React</p>
 									<p style={{ color: 'white' }}>Bootstrap</p>
+									<p style={{ color: 'white' }}>Material MUI</p>
 									<p style={{ color: 'white' }}>Material Design for Bootstrap</p>
+									<p style={{ color: 'white' }}>Express</p>
 								
 							</p>
 						</div>
