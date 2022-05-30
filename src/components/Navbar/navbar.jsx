@@ -19,14 +19,13 @@ const NavbarHome = () => {
 		e.preventDefault();
 		if (cerca) {
 			await axios
-			.get(`api/search/multi`, {
-				params: {
-					query: cerca
-				}
-			})
-			.then((results) => setCercaResult(results.data));
+				.get(`api/search/multi`, {
+					params: {
+						query: cerca
+					}
+				})
+				.then((results) => setCercaResult(results.data));
 		}
-		
 
 		if (cerca.length > 0) {
 			await axios
@@ -37,7 +36,6 @@ const NavbarHome = () => {
 				})
 				.then((results) => setCercaResult(results.data));
 		}
-
 	};
 
 	const handleChange = (e) => {
@@ -63,7 +61,7 @@ const NavbarHome = () => {
 									Trend
 								</Nav.Link>
 
-								<Nav.Link href="/Contact" element={<Contact />}>
+								<Nav.Link href="/Generi" element={<Contact />}>
 									Generi
 								</Nav.Link>
 							</Nav>

@@ -23,6 +23,7 @@ export default function RecipeReviewCard(props) {
 				<Modal.Header>
 					<Modal.Title>{props.title}</Modal.Title>
 				</Modal.Header>
+
 				<Modal.Body> {props.overview ? props.overview : 'non ce drescrizione'} </Modal.Body>
 			</Modal>
 		</div>

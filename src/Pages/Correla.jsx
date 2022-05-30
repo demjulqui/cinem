@@ -18,7 +18,7 @@ const HomePage = () => {
 				<Route path="/" element={<Layout />} />
 				<Route path="Login" element={<Homes />} />
 				<Route path="Trend" element={<Trend />} />
-				<Route path="contact" element={<Contact />} />
+				<Route path="Generi" element={<Contact />} />
 				<Route path="*" element={<NoPage />} />
 				<Route path="/Profile" element={<Profile />} />
 				<Route path="/prova" element={<prova />} />
