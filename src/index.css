@@ -203,12 +203,15 @@ code {
 }
 .click:hover {
     transform: scale(0.8);
-    transition-duration: 0.5s;
+    transition-duration: 0.5s; 
 }
 .moveAvatarAdd{
 	display: flex;
 	object-position: right;
 	justify-content: left;
+}
+:target{
+	border: 5px solid red;
 }
 
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
-import { Container, Row, Col, Button, Nav, DropdownButton, Dropdown, Modal, FormGroup, Form } from 'react-bootstrap';
+import { Container, Row, Col, Button, Nav, DropdownButton, Dropdown, Modal, FormGroup, Form, Card } from 'react-bootstrap';
 import Trend from './Trend';
 import "./profile.css";
 
@@ -13,21 +13,22 @@ const Profile = () => {
     const [profiles, setProfile] = useState([
         {
 
-            name: "Paulo",
-            img: "https://www.cronacheletterarie.com/wp-content/uploads/2022/01/Arcane.jpg"
+            name: "Paolo",
+            img: "https://th.bing.com/th/id/OIP.4l745LKOzMIKiNgqGO6cLQHaHa?pid=ImgDet&rs=1"
         },
         {
             name: "Carlo",
-            img: "https://www.ommercato.com/wp-content/uploads/2021/11/who-is-ekko-in-league-of-legends-arcane-voice-actor-character-explanation.jpg"
+            img: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/bf6e4a33850498.56ba69ac3064f.png"
         },
 
     ])
 
     const avatars = [
-        "https://cdn.vectorstock.com/i/1000x1000/20/76/man-avatar-profile-vector-21372076.webp",
-        "https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png",
-        "https://png.pngtree.com/png-vector/20190629/ourlarge/pngtree-business-people-avatar-icon-user-profile-free-vector-png-image_1527664.jpg",
-    ]
+        "https://pro2-bar-s3-cdn-cf.myportfolio.com/dddb0c1b4ab622854dd81280840458d3/877ad1ce3a479ef9498e1efc_rw_600.png?h=794db6a6ae01c539fdfb7ad5e5a89589",
+        "https://pro2-bar-s3-cdn-cf1.myportfolio.com/dddb0c1b4ab622854dd81280840458d3/92995677ac0aab719760c33c_rw_600.png?h=c453d5442731bca5c02fcc8a4542af57",
+        "https://pro2-bar-s3-cdn-cf.myportfolio.com/dddb0c1b4ab622854dd81280840458d3/baffc96f5eccbde6402befe0_rw_600.png?h=cc45688ebccb59201761f059f3f4e5e3",
+        "https://mir-s3-cdn-cf.behance.net/project_modules/disp/e70b1333850498.56ba69ac32ae3.png"
+    ]   
     const [newUser, setNewUser] = useState({
         name: "",
         img: "",
@@ -81,6 +82,7 @@ const Profile = () => {
                         {profiles.map(profile =>
                             <Col className='mt-5 d-flex justify-content-center'>
                                 <Nav.Link href="/Trend" element={<Trend />}>
+                                    
                                     <Avatar
 
                                         alt={profile.name + " avatar"}
@@ -89,7 +91,7 @@ const Profile = () => {
                                         className="click"
                                     />
 
-                                    <h3 className='text-center mt-3'>{profile.name}</h3>
+                                    <h3 className='text-center mt-3 profileTitolo'>{profile.name}</h3>
                                 </Nav.Link>
                             </Col>
                         )}
@@ -102,17 +104,17 @@ const Profile = () => {
                                 onClick={handleShow}
 
                                 alt="new Avatar img"
-                                src="https://png.pngtree.com/png-vector/20190307/ourlarge/pngtree-vector-add-user-icon-png-image_780603.jpg"
+                                src="https://corporate-podcast.com/wp-content/uploads/2020/03/MPC_CP_Icons_Umsetzung.png"
                                 sx={{ width: 225, height: 225 }}
-                                className="click"
+                                className="click target"
+                               
                             />
                         </Col>
                     </Row>
                     <Modal show={show} onHide={handleClose} size="lg" aria-labelledby="example-modal-sizes-title-lg" >
                         <form>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                                <Form.Label>nome user:{newUser.name}</Form.Label>
-                                <Form.Control type="text" placeholder="Modificare" onChange={handleChange} />
+                                <Form.Control type="text" placeholder="Inserisci nome utente" onChange={handleChange} />
                             </Form.Group>
                             <Row>
                                 <Col>
@@ -124,7 +126,7 @@ const Profile = () => {
                                 </Col>
                                 <Col>
                                     <Button variant="primary" onClick={addUser}>
-                                        aggingere utente
+                                        aggiungere utente
                                     </Button>
                                 </Col>
 
