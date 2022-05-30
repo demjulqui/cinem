@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Form, Button } from 'react-bootstrap';
+import { Card, Form, Button, Row, Col } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import axios from 'axios';
 import '../images/scrittablu.png';
@@ -52,6 +52,7 @@ const LoginPage = () => {
 								Password
 							</label>
 							<br />
+
 							<input
 								type="password"
 								className="Form-control"
@@ -65,10 +66,18 @@ const LoginPage = () => {
 								Check me out
 							</label>
 						</div>
+
 						<Nav.Link href="/Profile">
-							<Button className="mt-3" variant="primary">
-								Accedi
-							</Button>
+							<Row>
+								<Button className="mt-3" variant="primary">
+									Accedi
+								</Button>
+							</Row>
+							<Row>
+								<Button className="mt-3" variant="primary">
+									Registrati
+								</Button>
+							</Row>
 						</Nav.Link>
 					</Form>
 				</Card.Body>
