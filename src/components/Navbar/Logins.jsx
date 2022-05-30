@@ -44,7 +44,7 @@ const LoginPage = () => {
 								className="Form-control"
 								id="exampleInputEmail1"
 								aria-describedby="emailHelp"
-								placeholder="Enter email"
+								placeholder="E-mail"
 							/>
 						</div>
 						<div className="Form-group mt-3">
@@ -67,7 +67,7 @@ const LoginPage = () => {
 						</div>
 						<Nav.Link href="/Profile">
 							<Button className="mt-3" variant="primary">
-								Login
+								Accedi
 							</Button>
 						</Nav.Link>
 					</Form>

@@ -48,8 +48,10 @@ export default function Footer() {
 								Products
 							</h6>
 							<p>
-								
+									<p style={{ color: 'white' }}>JavaScript</p>
 									<p style={{ color: 'white' }}>React</p>
+									<p style={{ color: 'white' }}>Bootstrap</p>
+									<p style={{ color: 'white' }}>Material Design for Bootstrap</p>
 								
 							</p>
 						</div>
@@ -58,7 +60,7 @@ export default function Footer() {
 								Contact
 							</h6>
 							<p style={{ color: 'white' }}>
-								<i className="fas fa-home me-3" /> italy
+								<i className="fas fa-home me-3" /> Italia
 							</p>
 							<p style={{ color: 'white' }}>
 								<i className="fas fa-envelope me-3" />
@@ -80,7 +82,7 @@ export default function Footer() {
 			</section>
 
 			<div className="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', color: 'white' }}>
-				© 2021 Copyright: Film'S
+				© 2022 Copyright: Film'S
 				<a className="text-reset fw-bold" href="https://mdbootstrap.com/" />
 			</div>
 		</MDBFooter>

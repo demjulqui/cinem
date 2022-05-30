@@ -76,7 +76,7 @@ const Profile = () => {
         <>
             <div className='ChooseBackground'>
                 <Container>
-                    <h1 className='text-center profileTitolo' >Select your Profile's</h1>
+                    <h1 className='text-center profileTitolo' >Scegli il tuo profilo</h1>
                     <Row className='my-5'>
 
                         {profiles.map(profile =>
@@ -114,11 +114,11 @@ const Profile = () => {
                     <Modal show={show} onHide={handleClose} size="lg" aria-labelledby="example-modal-sizes-title-lg" >
                         <form>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                                <Form.Control type="text" placeholder="Inserisci nome utente" onChange={handleChange} />
+                                <Form.Control type="text" placeholder="Inserisci nome utente:" onChange={handleChange} />
                             </Form.Group>
                             <Row>
                                 <Col>
-                                    <DropdownButton id="dropdown-basic-button" title="Delete">
+                                    <DropdownButton id="dropdown-basic-button" title="Elimina">
                                         {profiles.map(profile =>
                                             <Dropdown.Item onClick={() => handleDelete(profile.name)}>{profile.name}</Dropdown.Item>
                                         )}
@@ -126,7 +126,7 @@ const Profile = () => {
                                 </Col>
                                 <Col>
                                     <Button variant="primary" onClick={addUser}>
-                                        aggiungere utente
+                                        Aggiungi utente
                                     </Button>
                                 </Col>
 
